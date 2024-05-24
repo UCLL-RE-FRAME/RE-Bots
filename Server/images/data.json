@@ -1,0 +1,30 @@
+{
+    "project1":{
+        "Dementieharp":{
+            "html":"<p><strong>Wat is het concreet? </strong></p><p>De dementieharp speelt in op sensorische stimulatie. Ze laat patiënten voelen, zien en horen en prikkelt meerdere zintuigen tegelijkertijd. Als je de staafjes van de harp aanraakt, lichten deze staafjes op, weerklinken geluidsfragmenten en worden beelden op een monitor geprojecteerd. De geluiden en beelden kunnen gepersonaliseerd worden per bewoner.   </p><p><strong>Voor wie is het? </strong></p><p>Huidige doelgroep: personen met dementie die in WZC wonen.  <br /> Andere (toekomstige) doelgroepen: personen met dementie die nog thuis wonen, mantelzorg, kleuter en lager onderwijs, kinderen met zorgproblematiek.</p><p><strong>Hoe wordt dit aangepakt? </strong></p> <p>Tafelmodel harp – TRL 5:  dit is een samenwerking van Hogeschool UCLL, designbureau ‘It’s a Roel’,' en woonzorgcentrum Toermalien.<br /> Dit is een kunststof of houten constructie met kunststof buizen, elektronica en sensoren, LED-lichtjes, scherm, Raspberry Pi, luidsprekers.</p>",
+            "image":"1.jpg",
+            "url":"https://www.youtube.com/watch?v=2i8Tj8vbMJk"
+        }
+    },
+    "project2":{
+        "CVA Loopband":{
+            "html":"<p><span><span><span>Revalidatie betekent soms terug leren stappen, ook in druk verkeer. Daarvoor bestaat er Virtual Reality. Maar dan moeten die beelden wel even snel of traag gaan als de loopband. Vijf studenten Toegepaste Informatica en graduaat Programmeren zochten apparatuur en ontwikkelden software om dit perfect te matchen.  Onze expertisecellen Digital Solutions en Smart Organisations zijn alvast fan. - Speedometer: VR Stroke rehabilitation.</span></span></span></p><p><span><span><span>Patiënten die revalideren na een verlamming oefenen in een gecontroleerde omgeving, bijvoorbeeld op een loopband. Maar de overstap naar wandelen in een drukke straat vergt heel wat oefening. Daarom wordt er gewerkt met virtual reality (VR). Via een VR-bril krijgen de patiënten een simulatie waarbij ze opdrachten moeten uitvoeren tijdens het wandelen of lopen, bijvoorbeeld een vogel zoeken in de lucht en deze zo ver mogelijk naar achter of voor te volgen. </span></span></span></p></div>",
+            "image":"2.jpg",
+            "url":"https://youtu.be/baB5UfwRWHw"
+        }
+    },
+    "project3":{
+        "VR Trainingen":{
+            "html":"<p><strong>Wat is het concreet? </strong></p><p>De VR-bril is een vorm van simulatieonderwijs waar een realistisch scenario wordt nagebootst. De (toekomstige) verpleegkundige observeert het gesprek tussen een verpleegkundige en een patiënt. De patiënt zegt tegen de verpleegkundige dat het leven voor hem niet meer hoeft. De video stopt en de (toekomstige) verpleegkundige kan kiezen uit drie mogelijke vervolgscenario’s. Wanneer de verpleegkundige de meest aangewezen keuze maakt, krijgt h/z/x de achterliggende klinische uitleg waarom dit de meest aangewezen keuze is, en gaat het gesprek verder. Wanneer er gekozen wordt voor een antwoord dat klinisch niet ondersteund wordt, krijgt de verpleegkundige de reactie van de patiënt op deze minder aangewezen uitspraak te zien, krijgt de verpleegkundige de klinische uitleg waarom dit niet aangewezen is en keert de user terug naar het keuzemenu. Het is namelijk belangrijk om te leren uit fouten, na te denken hoe het anders kan en opnieuw de draad terug op te pakken. De tool duurt 15 minuten en de belangrijkste zaken betreffende detectie, gespreksvoering, opstarten interventies, nazorg en follow-up worden ingeoefend. </p><p><strong>Voor wie is het?  </strong></p><p>Studenten verpleegkunde, verpleegkundigen. De tool kan ook worden uitgebreid naar andere hulpverleners </p>",
+            "image":"3.jpg",
+            "url":"https://www.youtube.com/watch?v=IHjuqijaURg"
+        }
+    },
+    "project4":{
+        "Swarm IOT":{
+            "html":"<p><strong>De stad Leuven en hogeschool UCLL voeren tijdens de Eindejaarscorrida op vrijdag 30 december een proefproject uit waarbij ze de drukte in kaart brengen met nieuwe technologie. Sensorunits zullen informatie uitwisselen over de aanwezige menigte. Met het geheel aan verzamelde informatie kunnen hulpdiensten en organisatoren vervolgens de (evolutie van die) menigte in kaart brengen. Daardoor kunnen ze op tijd ingrijpen wanneer het op bepaalde plekken te druk dreigt te worden. Na afloop wordt het proefproject geëvalueerd.</strong></p>",
+            "image":"4.jpg",
+            "url":"https://www.youtube.com/watch?v=0hWW6FVcFAo"
+        }
+    }
+}
