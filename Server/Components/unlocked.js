@@ -12,7 +12,6 @@ template.innerHTML = /*html*/ `
         overflow: hidden;
     }
     face-ʤ{
-        //margin-left: 650px;
         height:100%
     }
     .text {
@@ -27,44 +26,39 @@ template.innerHTML = /*html*/ `
         display:flex;
         justify-content: center;
     }
-    #face {
-        margin-left:125px;
-        //height:45vh;
-        //padding-bottom: 6rem;
-    }
     .F {
-        margin: 0px 25px;
+        margin: 0px 0.5em;
     }
-    /*
-        .eyes {
-          grid-area: eyes;
-        }
-        face-ʤ{
-            width:70vw;
-        }
-        .TL { grid-area: TL; }
-        .TR { grid-area: TR; }
-        .ML { grid-area: ML; }
-        .MR { grid-area: MR; }
-        .BL { grid-area: BL; }
-        .BR { grid-area: BR; }
-        .grid-container{
-          display: grid;
-          grid-template-areas:
-          'TL  eyes eyes eyes eyes TR'
-          'ML  eyes eyes eyes eyes MR'
-          'BL  eyes eyes eyes eyes BR';
-          gap: 10px;
-          background-color:transparent;
-          padding: 10px;
-        }
-        td {
-          border:  15px  solid white;
-          padding : 0px;
-          margin:  0px;
-          border-radius: 10px;
-        }
-        */
+    
+    .eyes {
+      grid-area: eyes;
+    }
+    face-ʤ{
+        width:70vw;
+    }
+    .TL { grid-area: TL; }
+    .TR { grid-area: TR; }
+    .ML { grid-area: ML; }
+    .MR { grid-area: MR; }
+    .BL { grid-area: BL; }
+    .BR { grid-area: BR; }
+    .grid-container{
+      display: grid;
+      grid-template-areas:
+      'TL  eyes eyes eyes eyes TR'
+      'ML  eyes eyes eyes eyes MR'
+      'BL  eyes eyes eyes eyes BR';
+      gap: 10px;
+      background-color:transparent;
+      padding: 10px;
+    }
+    td {
+      border:  15px  solid white;
+      padding : 0px;
+      margin:  0px;
+      border-radius: 10px;
+    }
+        
 </style>
 
 <!-- <div class="grid-container" id="main"> -->
@@ -74,16 +68,16 @@ template.innerHTML = /*html*/ `
         <face-ʤ class="eyes"></face-ʤ>
     </div>
     <div class="content">
-        <link-ʤ class="C" thumb="1" format="jpg"></link-ʤ>
-        <link-ʤ class="C" thumb="2" format="jpg"></link-ʤ>
-        <link-ʤ class="C" thumb="3" format="jpg"></link-ʤ>
-        <link-ʤ class="C" thumb="4" format="jpg"></link-ʤ>
-        <link-ʤ class="C" thumb="5" format="jpg"></link-ʤ>
-        <link-ʤ class="C" thumb="6" format="jpg"></link-ʤ>
-        <link-ʤ class="C" thumb="7" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="1" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="2" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="3" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="4" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="5" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="6" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="7" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="8" format="png"></link-ʤ>
     </div>
     <div class="content">
-        <link-ʤ class="F" thumb="8" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="9" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="10" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="11" format="png"></link-ʤ>
@@ -93,11 +87,14 @@ template.innerHTML = /*html*/ `
         <link-ʤ class="F" thumb="15" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="16" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="17" format="png"></link-ʤ>
-        <link-ʤ class="F" thumb="18" format="png"></link-ʤ>
+    </div>
+    <div class="content">
+    <link-ʤ class="F" thumb="18" format="png"></link-ʤ>
     </div>
 </div>
 <beurs-ʤ class="NLlink" thumb="4" hidden></beurs-ʤ>
 `;
+
 //#endregion TEMPLATE
 
 //#region CLASS
