@@ -6,12 +6,9 @@
 let template = document.createElement("template");
 template.innerHTML = /*html*/ `
   <style>
-
         img{
         width:200px;
         height: 200px;
-        justify-content: center;
-        align-content: center;
     }
     /*
     :host { font-family: sans-serif; }  
