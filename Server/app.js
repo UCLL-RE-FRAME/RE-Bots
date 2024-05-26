@@ -16,7 +16,7 @@ APP.use("/advanced", express.static("./Interfaces/VIEW"));
 APP.use("/eudres", express.static("./Interfaces/EUDRES"));
 APP.use("/beurs", express.static("./Interfaces/UNLOCKED"));
 // PARTS
-APP.use("/components", express.static("./components"));
+APP.use("/components", express.static("../Frontend/components"));
 APP.use("/data", express.static("./data"));
 APP.use("/media", express.static("./media"));
 APP.use("/images", express.static("./images"));
