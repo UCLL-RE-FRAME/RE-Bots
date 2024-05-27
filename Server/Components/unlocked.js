@@ -8,40 +8,7 @@ import "./beurs.js";
 //#region TEMPLATE
 let template = document.createElement("template");
 template.innerHTML = /*html*/ `
-<style>
-:host {
-        overflow: hidden;
-    }
-    .text {
-        grid-area: text;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 40pt;
-        font-family: "Lobster";
-    }
-	#face{
-		padding-bottom: 2em;
-	}
-	.content {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		place-items: center;
-		gap: 25px;
-		margin: auto;
-		overflow-y: auto;
-		height: 560px;
-		width: 90vw;
-
-		scrollbar-width: thin;
-    	scrollbar-color: #e00049  #9fdaf9;
-	}
-	.F{
-		height: 16em;
-		width: 16em;
-	}
-</style>
-
+<link href="../Components/style.css" rel="stylesheet" type="text/css">  
 <div id="main">
     <div id="face">
         <face-ʤ class="eyes"></face-ʤ>
