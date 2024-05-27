@@ -1,6 +1,6 @@
 //#region TEMPLATE
-const face_template = document.createElement('template');
-face_template.innerHTML = /*html*/`
+const face_template = document.createElement("template");
+face_template.innerHTML = /*html*/ `
   <style>
       div {
         width:63%; /* was 80% pre-beurs */
@@ -228,81 +228,118 @@ face_template.innerHTML = /*html*/`
 //#endregion TEMPLATE
 
 //region CLASS
-window.customElements.define('face-ʤ', class extends HTMLElement {
-    constructor() {
-        super();
-        this._shadowRoot = this.attachShadow({ 'mode': 'open' });
-        this._shadowRoot.appendChild(face_template.content.cloneNode(true));
-        this.$svg = this._shadowRoot.querySelector('svg');
-        // this.$pupil_L = this._shadowRoot.querySelector('#pupil_L');
-        this.socket = new WebSocket('ws://essadji.be:2105');
-        this.$browL = this._shadowRoot.querySelector("#brow_L")
-        this.$browR = this._shadowRoot.querySelector("#brow_R")
-        this.$rotL = this._shadowRoot.querySelector("#Ir_L")
-        this.$rotR = this._shadowRoot.querySelector("#Ir_R")
-        // this.$pupL = this._shadowRoot.querySelector("#pupil_L")
-        // this.$pupR = this._shadowRoot.querySelector("#pupil_R")
-    }
+window.customElements.define(
+	"face-ʤ",
+	class extends HTMLElement {
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(face_template.content.cloneNode(true));
+			this.$svg = this._shadowRoot.querySelector("svg");
+			// this.$pupil_L = this._shadowRoot.querySelector('#pupil_L');
+			this.socket = new WebSocket("ws://essadji.be:2105");
+			this.$browL = this._shadowRoot.querySelector("#brow_L");
+			this.$browR = this._shadowRoot.querySelector("#brow_R");
+			this.$rotL = this._shadowRoot.querySelector("#Ir_L");
+			this.$rotR = this._shadowRoot.querySelector("#Ir_R");
+			// this.$pupL = this._shadowRoot.querySelector("#pupil_L")
+			// this.$pupR = this._shadowRoot.querySelector("#pupil_R")
+		}
 
-    connectedCallback() {
-        // this.$svg.addEventListener('click', this.handler.bind(this))
-        this.socket.addEventListener('open', (event) => {
-            console.log("opening socket...")
-            this.socket.send(JSON.stringify({ "payload": "Hello Server, I'm James's face ..." }));
-        });
-        this.socket.addEventListener('message', (event) => {
-            let incoming;
-            try {
-                incoming = JSON.parse(event.data)
-            } catch (error) {
-                console.warn("PAYLOAD ERROR:")
-                console.dir(error)
-                incoming = { "payload": "illegal payload" }
-            }
-            if (incoming.payload == "move") {
-                // console.dir(incoming)
-                switch (incoming.target) {
-                    case "eye_L":
-                        this.browerL(incoming.y)
-                        this.rangerL(incoming.x)
-                        break;
-                    case "eye_R":
-                        this.browerR(incoming.y)
-                        this.rangerR(incoming.x)
-                        break;
-                    case "pupil_L":
-                        // this.mover("pupil_L",incoming.x, incoming.y)
-                        break;
-                    case "pupil_R":
-                        // this.mover("pupil_R",incoming.x, incoming.y)
-                        break;
+		connectedCallback() {
+			// this.$svg.addEventListener('click', this.handler.bind(this))
+			this.socket.addEventListener("open", (event) => {
+				console.log("opening socket...");
+				this.socket.send(
+					JSON.stringify({
+						payload: "Hello Server, I'm James's face ...",
+					})
+				);
+			});
+			this.socket.addEventListener("message", (event) => {
+				let incoming;
+				try {
+					incoming = JSON.parse(event.data);
+				} catch (error) {
+					console.warn("PAYLOAD ERROR:");
+					console.dir(error);
+					incoming = {payload: "illegal payload"};
+				}
+				if (incoming.payload == "move") {
+					// console.dir(incoming)
+					switch (incoming.target) {
+						case "eye_L":
+							this.browerL(incoming.y);
+							this.rangerL(incoming.x);
+							break;
+						case "eye_R":
+							this.browerR(incoming.y);
+							this.rangerR(incoming.x);
+							break;
+						case "pupil_L":
+							// this.mover("pupil_L",incoming.x, incoming.y)
+							break;
+						case "pupil_R":
+							// this.mover("pupil_R",incoming.x, incoming.y)
+							break;
+					}
+				}
+			});
+		}
 
-                }
+		browerL(e) {
+			this.$browL.setAttribute(
+				"transform",
+				`translate(0,${17 * (e / 30) - 70})`
+			);
+		}
+		browerR(e) {
+			this.$browR.setAttribute(
+				"transform",
+				`translate(0,${17 * (e / 30) - 70})`
+			);
+		}
+		rangerL(e) {
+			this.$rotL.setAttribute(
+				"transform",
+				`rotate(${(e - 150) * 0.05 - 2.5},820,3410)`
+			);
+		}
+		rangerR(e) {
+			this.$rotR.setAttribute(
+				"transform",
+				`rotate(${(e - 150) * 0.05 + 2.5},1390,3400)`
+			);
+		}
+		mover(target, x, y) {
+			this._shadowRoot
+				.querySelector("#" + target)
+				.setAttribute(
+					"transform",
+					`translate(${(x - 150) / 2},${y - y})`
+				);
+		}
 
-            }
+		// handler(e) {
+		// 	this.$pupil_L.classList.add("hidden")
+		// }
 
-        });
-    }
-
-    browerL(e) { this.$browL.setAttribute("transform", `translate(0,${(17 * (e / 30)) - 70})`); }
-    browerR(e) { this.$browR.setAttribute("transform", `translate(0,${(17 * (e / 30)) - 70})`); }
-    rangerL(e) { this.$rotL.setAttribute("transform", `rotate(${((e - 150) * .05) - 2.5},820,3410)`); }
-    rangerR(e) { this.$rotR.setAttribute("transform", `rotate(${((e - 150) * .05) + 2.5},1390,3400)`); }
-    mover(target, x, y) { this._shadowRoot.querySelector("#" + target).setAttribute("transform", `translate(${(x - 150) / 2},${y - y})`); }
-
-    // handler(e) {
-    // 	this.$pupil_L.classList.add("hidden")
-    // }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        switch (name) {
-            case 'icon':
-                let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-                use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", `SVG/${newValue}.svg#icon`);
-                this.$svg.appendChild(use)
-                break;
-        }
-    }
-
-});
+		attributeChangedCallback(name, oldValue, newValue) {
+			switch (name) {
+				case "icon":
+					let use = document.createElementNS(
+						"http://www.w3.org/2000/svg",
+						"use"
+					);
+					use.setAttributeNS(
+						"http://www.w3.org/1999/xlink",
+						"xlink:href",
+						`SVG/${newValue}.svg#icon`
+					);
+					this.$svg.appendChild(use);
+					break;
+			}
+		}
+	}
+);
 //#endregion CLASS
