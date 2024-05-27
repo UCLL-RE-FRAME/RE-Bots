@@ -9,7 +9,7 @@ template.innerHTML = /*html*/ `
         img{
         width: 16em;
         height: 16em;
-        border-radius: 12px;
+        border-radius: 24px;
     	}
     /*
     :host { font-family: sans-serif; }  
