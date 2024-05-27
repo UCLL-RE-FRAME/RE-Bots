@@ -7,7 +7,7 @@ let template = document.createElement("template");
 template.innerHTML = /*html*/ `
   <style>
         img{
-        width:200px;
+        width:100%;
         height: 200px;
     }
     /*
@@ -32,6 +32,7 @@ window.customElements.define(
 			this.$img = this._shadowRoot.querySelector("img");
 		}
 
+<<<<<<< HEAD
 		connectedCallback() {
 			this.$img.src = `../images/${this.getAttribute(
 				"thumb"
@@ -57,5 +58,30 @@ window.customElements.define(
 		//   }
 		// }
 	}
+=======
+    connectedCallback() {
+      this.$img.src = `../images/${this.getAttribute("thumb")}.${this.getAttribute("format")}`;
+      // console.log(this.getAttribute("thumb"));
+      //   this.addEventListener("go", (e) => {
+      //     // console.log(e); // logs menu button actions
+      //     this.$main.setAttribute("showing", e.detail.id);
+      //   });
+      //   this.$button1.addEventListener("click", () => {
+      //     console.log("TEST  HALLO");
+      //   });
+    }
+    // static get observedAttributes() {
+    //   return ["thumb"];
+    // }
+    // attributeChangedCallback(name, oldValue, newValue) {
+    //   switch (name) {
+    //     case "thumb":
+    //       console.log(`[FLAG] ${oldValue} => ${newValue}`)
+    //       this.$img.src = `../images/${newValue}.jpg`|| `../images/${newValue}.png`;
+    //       break;
+    //   }
+    // }
+  }
+>>>>>>> 54facf9 (Herinbrengen code, laptop errors)
 );
 //#endregion CLASS
