@@ -10,7 +10,7 @@ template.innerHTML = /*html*/ `
         width: 16em;
         height: 16em;
         border-radius: 12px;
-    }
+    	}
     /*
     :host { font-family: sans-serif; }  
     */

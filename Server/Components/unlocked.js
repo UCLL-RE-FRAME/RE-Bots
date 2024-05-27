@@ -27,12 +27,17 @@ template.innerHTML = /*html*/ `
 	.content {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-
+		place-items: center;
 		gap: 25px;
 		margin: auto;
 		overflow-y: auto;
 		height: 560px;
 		width: 88vw;
+	}
+
+	.F{
+		height: 16em;
+		width: 16em;
 	}
 
 
