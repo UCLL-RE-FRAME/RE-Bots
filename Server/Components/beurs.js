@@ -59,40 +59,40 @@ template.innerHTML = /*html*/ `
 
 //region CLASS
 window.customElements.define(
-  "beurs-ʤ",
-  class extends HTMLElement {
-    constructor() {
-      super();
-      this._shadowRoot = this.attachShadow({ mode: "open" });
-      this._shadowRoot.appendChild(template.content.cloneNode(true));
-      this.$image = this._shadowRoot.querySelector("#project");
-      this.$abstract = this._shadowRoot.querySelector("#abstract");
-      this.$youtubeLogo = this._shadowRoot.querySelector("#ytLogo");
-      this.$title = this._shadowRoot.querySelector("#title");
-    }
+	"beurs-ʤ",
+	class extends HTMLElement {
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(template.content.cloneNode(true));
+			this.$image = this._shadowRoot.querySelector("#project");
+			this.$abstract = this._shadowRoot.querySelector("#abstract");
+			this.$youtubeLogo = this._shadowRoot.querySelector("#ytLogo");
+			this.$title = this._shadowRoot.querySelector("#title");
+		}
 
-    setContent(content) {
-      this.$abstract.innerHTML = content.html;
-      this.$title.innerHTML = content.title;
-      this.$image.src = "../images/" + content.image;
-      this.$tube = content.url;
-      if (this.$tube) {
-        this.$youtubeLogo.addEventListener("click", () => {
-          window.location.href = this.$tube;
-        });
-      } else {
-        this.$youtubeLogo.hidden = true;
-      }
-    }
+		setContent(content) {
+			this.$abstract.innerHTML = content.html;
+			this.$title.innerHTML = content.title;
+			this.$image.src = "../images/" + content.image;
+			this.$tube = content.url;
+			if (this.$tube) {
+				this.$youtubeLogo.addEventListener("click", () => {
+					window.location.href = this.$tube;
+				});
+			} else {
+				this.$youtubeLogo.hidden = true;
+			}
+		}
 
-    connectedCallback() {}
+		connectedCallback() {}
 
-    attributeChangedCallback(name, oldValue, newValue) {
-      switch (name) {
-        case "":
-          break;
-      }
-    }
-  }
+		attributeChangedCallback(name, oldValue, newValue) {
+			switch (name) {
+				case "":
+					break;
+			}
+		}
+	}
 );
 //#endregion CLASS
