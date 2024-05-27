@@ -7,7 +7,7 @@ let template = document.createElement("template");
 template.innerHTML = /*html*/ `
   <style>
         img{
-        width:200px;
+        width:100%;
         height: 200px;
     }
     /*
@@ -33,9 +33,7 @@ window.customElements.define(
     }
 
     connectedCallback() {
-      this.$img.src = `../images/${this.getAttribute(
-        "thumb"
-      )}.${this.getAttribute("format")}`;
+      this.$img.src = `../images/${this.getAttribute("thumb")}.${this.getAttribute("format")}`;
       // console.log(this.getAttribute("thumb"));
       //   this.addEventListener("go", (e) => {
       //     // console.log(e); // logs menu button actions
