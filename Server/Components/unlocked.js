@@ -2,13 +2,14 @@
 import "./link.js";
 import "./face.js";
 import "./beurs.js";
+
 //#endregion IMPORTS
 
 //#region TEMPLATE
 let template = document.createElement("template");
 template.innerHTML = /*html*/ `
 <style>
-    :host {
+:host {
         overflow: hidden;
     }
     .text {
@@ -19,11 +20,9 @@ template.innerHTML = /*html*/ `
         font-size: 40pt;
         font-family: "Lobster";
     }
-
 	#face{
 		padding-bottom: 2em;
 	}
-
 	.content {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -32,17 +31,16 @@ template.innerHTML = /*html*/ `
 		margin: auto;
 		overflow-y: auto;
 		height: 560px;
-		width: 88vw;
-	}
+		width: 90vw;
 
+		scrollbar-width: thin;
+    	scrollbar-color: #e00049  #9fdaf9;
+	}
 	.F{
 		height: 16em;
 		width: 16em;
 	}
-
-
 </style>
-
 
 <div id="main">
     <div id="face">
