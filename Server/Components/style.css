@@ -43,9 +43,6 @@ body {
 	overflow-y: auto;
 	height: 560px;
 	width: 90vw;
-
-	scrollbar-width: thin;
-	scrollbar-color: --ucll-red --ucll-sky;
 }
 .F {
 	height: 16em;
