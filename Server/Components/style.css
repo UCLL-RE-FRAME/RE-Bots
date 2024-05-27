@@ -19,3 +19,35 @@ body {
 	--ucll-blue: #002757;
 	--ucll-sky: #9fdaf9;
 }
+
+:host {
+	overflow: hidden;
+}
+.text {
+	grid-area: text;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40pt;
+	font-family: "Lobster";
+}
+#face {
+	padding-bottom: 2em;
+}
+.content {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	place-items: center;
+	gap: 25px;
+	margin: auto;
+	overflow-y: auto;
+	height: 560px;
+	width: 90vw;
+
+	scrollbar-width: thin;
+	scrollbar-color: --ucll-red --ucll-sky;
+}
+.F {
+	height: 16em;
+	width: 16em;
+}
