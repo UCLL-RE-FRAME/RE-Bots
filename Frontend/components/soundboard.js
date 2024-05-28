@@ -1,15 +1,16 @@
-window.customElements.define('soundboard-Ƅ', class extends HTMLElement {
+window.customElements.define(
+	"soundboard-Ƅ",
+	class extends HTMLElement {
+		style;
 
-    style;
+		#boxSize = 90;
 
-    #boxSize = 90;
+		constructor() {
+			super();
 
-    constructor() {
-        super();
-
-        this.div = document.createElement('div');
-        this.div.id = "board";
-        this.div.innerHTML = `
+			this.div = document.createElement("div");
+			this.div.id = "board";
+			this.div.innerHTML = `
           <div class="square color1" id="rocky-theme-tune-mp3cut"><a href="#" class="btn blue">rocky</a></div>
           <div class="square color2" id="windows-xp-shutdown"> <a href="#" class="btn red">shutdown</a></div>
           <div class="square color2" id="awkward-cricket-sound-effect"><a href="#" class="btn green">silence</a></div>
@@ -20,8 +21,8 @@ window.customElements.define('soundboard-Ƅ', class extends HTMLElement {
           <div class="square color1" id="tf_nemesis"> <a href="#" class="btn pink">nemesis</a></div>
     `;
 
-        this.style = document.createElement('style');
-        this.style.textContent = `
+			this.style = document.createElement("style");
+			this.style.textContent = `
           :host {
               box-sizing: border-box;
               position: absolute;
@@ -32,19 +33,21 @@ window.customElements.define('soundboard-Ƅ', class extends HTMLElement {
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
-              height: ${this.#boxSize}%;
+              height: 100%;
+				      width: 80%;
           }
           #board {
             display: flex;
             flex-wrap: wrap;
+            place-items: center;
             width: 100%;
             height: 100%;
           }
           .square {
+            height: 24%;
             width: 50%;
           }
           .color1 {
-            
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -52,7 +55,6 @@ window.customElements.define('soundboard-Ƅ', class extends HTMLElement {
             color:white;
           }
           .color2 {
-            
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -154,27 +156,29 @@ window.customElements.define('soundboard-Ƅ', class extends HTMLElement {
               }
   `;
 
-        this._shadowroot = this.attachShadow({ mode: 'open' });
-        this._shadowroot.appendChild(this.div);
-        this._shadowroot.appendChild(this.style);
+			this._shadowroot = this.attachShadow({mode: "open"});
+			this._shadowroot.appendChild(this.div);
+			this._shadowroot.appendChild(this.style);
 
-        const squares = this._shadowroot.querySelectorAll('.square');
+			const squares = this._shadowroot.querySelectorAll(".square");
 
-        squares.forEach(square => {
-            square.addEventListener('click', () => {
-                this.sendSoundLocation(square.id);
-            });
-        });
-    }
+			squares.forEach((square) => {
+				square.addEventListener("click", () => {
+					this.sendSoundLocation(square.id);
+				});
+			});
+		}
 
-    sendSoundLocation(sound) {
-        this.dispatchEvent(new CustomEvent(this.id, {
-            bubbles: true,
-            composed: true,
-            detail: {
-                "link": `https://www.myinstants.com/media/sounds/${sound}.mp3`
-            }
-        }));
-    }
-
-});
+		sendSoundLocation(sound) {
+			this.dispatchEvent(
+				new CustomEvent(this.id, {
+					bubbles: true,
+					composed: true,
+					detail: {
+						link: `https://www.myinstants.com/media/sounds/${sound}.mp3`,
+					},
+				})
+			);
+		}
+	}
+);

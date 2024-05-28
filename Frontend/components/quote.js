@@ -1,40 +1,42 @@
-window.customElements.define('quote-Ƅ', class extends HTMLElement {
+window.customElements.define(
+	"quote-Ƅ",
+	class extends HTMLElement {
+		style;
+		buttons = [
+			"euhm ...",
+			"daar moet ik even over nadenken",
+			"ab soo luut !",
+		];
+		// #boxSize = 80;
+		redraw() {
+			this.$text.value = "";
+			console.dir(this._shadowroot.querySelector("#quotes").innerHTML);
+			this._shadowroot.querySelector("#quotes").innerHTML = "";
+			console.dir(this._shadowroot.querySelector("#quotes").innerHTML);
+			this.buttons.forEach((b) => {
+				let x = document.createElement("button");
+				x.innerHTML = b;
+				x.classList.add("q");
+				this._shadowroot.querySelector("#quotes").appendChild(x);
+				x.addEventListener("click", () => {
+					this.dispatchEvent(
+						new CustomEvent("tts", {
+							bubbles: true,
+							composed: true,
+							detail: {
+								message: this.$text.value,
+							},
+						})
+					);
+				});
+			});
+		}
+		constructor() {
+			super();
 
-    style;
-buttons = [
-		"euhm ...",
-		"daar moet ik even over nadenken",
-		"ab soo luut !"
-	];
-    // #boxSize = 80;
-	redraw(){
-		this.$text.value='';
-		console.dir(this._shadowroot.querySelector("#quotes").innerHTML);
-		this._shadowroot.querySelector("#quotes").innerHTML='';
-		console.dir(this._shadowroot.querySelector("#quotes").innerHTML);
-	this.buttons.forEach((b) => {
-		let x = document.createElement('button');
-		x.innerHTML = b;
-		x.classList.add("q");
-		this._shadowroot.querySelector('#quotes').appendChild(x);
-		x.addEventListener('click', () => {
-			this.dispatchEvent(new CustomEvent("tts", {
-				bubbles: true,
-				composed: true,
-				detail: {
-					"message": this.$text.value
-				}
-			}));
-		});
-	})
-
-}
-    constructor() {
-        super();
-
-        this.form = document.createElement('div');
-        this.form.id = 'form';
-        this.form.innerHTML = `
+			this.form = document.createElement("div");
+			this.form.id = "form";
+			this.form.innerHTML = `
 			<div class="brand-title">
       		<label>QUOTES</label> 
 			  </div>
@@ -47,8 +49,8 @@ buttons = [
 			<div id="quotes"></div>
     	`;
 
-        this.style = document.createElement('style');
-        this.style.textContent = `
+			this.style = document.createElement("style");
+			this.style.textContent = `
 			:host {
                 box-sizing: border-box;
                 position: absolute;
@@ -57,7 +59,7 @@ buttons = [
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                height: 95%;
+                height: 98%;
 				width: 80%;
 				background: #ecf0f3;
   				box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
@@ -65,6 +67,7 @@ buttons = [
 		  
 			#form {
 			    padding: 1rem;
+
 			}
 			input[type=text]{
 				padding-left:10%;
@@ -122,21 +125,22 @@ buttons = [
 			  
 		`;
 
-        this._shadowroot = this.attachShadow({ mode: 'open' });
-        this._shadowroot.appendChild(this.form);
-        this._shadowroot.appendChild(this.style);
-		
-		this.$button = this._shadowroot.querySelector('#add');
-		this.$text = this._shadowroot.querySelector('input')
-        this.$button.addEventListener('click', ()=>{
-			if(this.$text.value){
-				this.buttons.push(this.$text.value);
-				this.redraw();
-			} else {console.log("no text")}
-				}
-			);
-        // this.form.addEventListener('submit', this.logSubmit.bind(this));
-		this.redraw();
-    }
+			this._shadowroot = this.attachShadow({mode: "open"});
+			this._shadowroot.appendChild(this.form);
+			this._shadowroot.appendChild(this.style);
 
-});
+			this.$button = this._shadowroot.querySelector("#add");
+			this.$text = this._shadowroot.querySelector("input");
+			this.$button.addEventListener("click", () => {
+				if (this.$text.value) {
+					this.buttons.push(this.$text.value);
+					this.redraw();
+				} else {
+					console.log("no text");
+				}
+			});
+			// this.form.addEventListener('submit', this.logSubmit.bind(this));
+			this.redraw();
+		}
+	}
+);

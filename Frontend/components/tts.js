@@ -1,15 +1,16 @@
-window.customElements.define('tts-Ƅ', class extends HTMLElement {
+window.customElements.define(
+	"tts-Ƅ",
+	class extends HTMLElement {
+		style;
 
-    style;
+		#boxSize = 80;
 
-    #boxSize = 80;
+		constructor() {
+			super();
 
-    constructor() {
-        super();
-
-        this.form = document.createElement('form');
-        this.form.id = 'tts_form';
-        this.form.innerHTML = `
+			this.form = document.createElement("form");
+			this.form.id = "tts_form";
+			this.form.innerHTML = `
 			<div class="brand-title">
       		<label>TEXT-TO-SPEECH</label> 
 			  </div>
@@ -18,8 +19,8 @@ window.customElements.define('tts-Ƅ', class extends HTMLElement {
       		<button type="submit">SEND</button>
     	`;
 
-        this.style = document.createElement('style');
-        this.style.textContent = `
+			this.style = document.createElement("style");
+			this.style.textContent = `
 			:host {
                 box-sizing: border-box;
                 position: absolute;
@@ -87,23 +88,25 @@ window.customElements.define('tts-Ƅ', class extends HTMLElement {
 			  
 		`;
 
-        this._shadowroot = this.attachShadow({ mode: 'open' });
-        this._shadowroot.appendChild(this.form);
-        this._shadowroot.appendChild(this.style);
-		this.$button = this._shadowroot.querySelector('button');
-		this.$text = this._shadowroot.querySelector('input')
-        this.$button.addEventListener('click', ()=>{
-			this.dispatchEvent(new CustomEvent(this.id, {
-				bubbles: true,
-				composed: true,
-				detail: {
-					"message": this.$text.value
-				}
-			}));
-		});
-        // this.form.addEventListener('submit', this.logSubmit.bind(this));
-    }
-/*
+			this._shadowroot = this.attachShadow({mode: "open"});
+			this._shadowroot.appendChild(this.form);
+			this._shadowroot.appendChild(this.style);
+			this.$button = this._shadowroot.querySelector("button");
+			this.$text = this._shadowroot.querySelector("input");
+			this.$button.addEventListener("click", () => {
+				this.dispatchEvent(
+					new CustomEvent(this.id, {
+						bubbles: true,
+						composed: true,
+						detail: {
+							message: this.$text.value,
+						},
+					})
+				);
+			});
+			// this.form.addEventListener('submit', this.logSubmit.bind(this));
+		}
+		/*
     logSubmit(event) {
         event.preventDefault();
         const formData = new FormData(this.form);
@@ -122,4 +125,5 @@ window.customElements.define('tts-Ƅ', class extends HTMLElement {
         }));
     }
 */
-});
+	}
+);
