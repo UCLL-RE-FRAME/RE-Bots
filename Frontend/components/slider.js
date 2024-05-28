@@ -1,29 +1,46 @@
-window.customElements.define('slider-Ƅ', class extends HTMLElement {
+window.customElements.define(
+	"slider-Ƅ",
+	class extends HTMLElement {
+		style;
 
-    style;
+		#min = 0;
+		#max = 100;
+		#start = 50;
+		#boxSize = 90;
 
-    #min = 0;
-    #max = 100;
-    #start = 50;
-    #boxSize = 90;
+		constructor() {
+			super();
 
-    constructor() {
-        super();
+			this.getAttribute("min") == undefined
+				? console.log(
+						`using standard for min in ${this.id}: (${this.#min})`
+				  )
+				: (this.#min = this.getAttribute("min"));
+			this.getAttribute("max") == undefined
+				? console.log(
+						`using standard for max in ${this.id}: (${this.#max})`
+				  )
+				: (this.#max = this.getAttribute("max"));
+			this.getAttribute("start") == undefined
+				? console.log(
+						`using standard for start in ${this.id}: (${
+							this.#start
+						})`
+				  )
+				: (this.#start = this.getAttribute("start"));
 
-        this.getAttribute("min") == undefined ? console.log(`using standard for min in ${this.id}: (${this.#min})`) : this.#min = this.getAttribute("min");
-        this.getAttribute("max") == undefined ? console.log(`using standard for max in ${this.id}: (${this.#max})`) : this.#max = this.getAttribute("max");
-        this.getAttribute("start") == undefined ? console.log(`using standard for start in ${this.id}: (${this.#start})`) : this.#start = this.getAttribute("start");
-
-        this.slide = document.createElement('div');
-        this.slide.id = 'slide';
-        this.slide.innerHTML = `
+			this.slide = document.createElement("div");
+			this.slide.id = "slide";
+			this.slide.innerHTML = `
       <p class="header">${this.id} (${this.#min} --> ${this.#max}):</p>
-      <input type="range" min="${this.#min}" max="${this.#max}" value="${this.#start}" id="slideSlider">
+      <input type="range" min="${this.#min}" max="${this.#max}" value="${
+				this.#start
+			}" id="slideSlider">
       <p class="value">Value: <span id="sliderValue"></span></p>
     `;
 
-        this.style = document.createElement('style');
-        this.style.textContent = `
+			this.style = document.createElement("style");
+			this.style.textContent = `
     :host {
      
   }
@@ -142,28 +159,30 @@ window.customElements.define('slider-Ƅ', class extends HTMLElement {
       }
     `;
 
-        this._shadowroot = this.attachShadow({ mode: 'open' });
-        this._shadowroot.appendChild(this.slide);
-        this._shadowroot.appendChild(this.style);
+			this._shadowroot = this.attachShadow({mode: "open"});
+			this._shadowroot.appendChild(this.slide);
+			this._shadowroot.appendChild(this.style);
 
-        this.slide.addEventListener('change', this.moveSlider.bind(this));
-        document.addEventListener('DOMContentLoaded', () => {
-            this.moveSlider();
-        });
-    }
+			this.slide.addEventListener("change", this.moveSlider.bind(this));
+			document.addEventListener("DOMContentLoaded", () => {
+				this.moveSlider();
+			});
+		}
 
-    moveSlider(event) {
-        const value = this._shadowroot.getElementById("slideSlider").value;
-        const output = this._shadowroot.getElementById("sliderValue");
-        output.innerHTML = value;
+		moveSlider(event) {
+			const value = this._shadowroot.getElementById("slideSlider").value;
+			const output = this._shadowroot.getElementById("sliderValue");
+			output.innerHTML = value;
 
-        this.slide.dispatchEvent(new CustomEvent(this.id, {
-            bubbles: true,
-            composed: true,
-            detail: {
-                "value": value
-            }
-        }));
-    }
-
-});
+			this.slide.dispatchEvent(
+				new CustomEvent(this.id, {
+					bubbles: true,
+					composed: true,
+					detail: {
+						value: value,
+					},
+				})
+			);
+		}
+	}
+);

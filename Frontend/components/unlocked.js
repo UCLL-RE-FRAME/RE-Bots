@@ -14,23 +14,23 @@ template.innerHTML = /*html*/ `
         <face-ʤ class="eyes"></face-ʤ>
     </div>
     <div class="content">
-        <link-ʤ id="rowFirst" class="F" thumb="1" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="1" format="jpg"></link-ʤ>
         <link-ʤ class="F" thumb="2" format="jpg"></link-ʤ>
         <link-ʤ class="F" thumb="3" format="jpg"></link-ʤ>
         <link-ʤ class="F" thumb="4" format="jpg"></link-ʤ>
-        <link-ʤ id="rowFirst" class="F" thumb="5" format="jpg"></link-ʤ>
+        <link-ʤ class="F" thumb="5" format="jpg"></link-ʤ>
         <link-ʤ class="F" thumb="6" format="jpg"></link-ʤ>
         <link-ʤ class="F" thumb="7" format="jpg"></link-ʤ>
         <link-ʤ class="F" thumb="8" format="png"></link-ʤ>
-        <link-ʤ id="rowFirst" class="F" thumb="9" format="png"></link-ʤ>
+        <link-ʤ class="F" thumb="9" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="10" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="11" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="12" format="png"></link-ʤ>
-       	<link-ʤ id="rowFirst" class="F" thumb="13" format="png"></link-ʤ>
+       	<link-ʤ class="F" thumb="13" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="14" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="15" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="16" format="png"></link-ʤ>
-        <link-ʤ  id="rowFirst" class="F" thumb="17" format="png"></link-ʤ>
+        <link-ʤ class="F" thumb="17" format="png"></link-ʤ>
         <link-ʤ class="F" thumb="18" format="png"></link-ʤ>
     </div>
 </div>
