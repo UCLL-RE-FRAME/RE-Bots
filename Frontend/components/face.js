@@ -2,7 +2,7 @@
 const face_template = document.createElement("template");
 face_template.innerHTML = /*html*/ `
   <style>
-      div {
+      #eyes-container {
         width:100%; /* was 80% pre-beurs */
         margin:auto;
       }
@@ -47,7 +47,7 @@ face_template.innerHTML = /*html*/ `
     }
   </style>
 
-  <div>
+  <div id="eyes-container">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="450 2550 1300 885" height="375px"><!--  was  1500  -->
     <!-- style="enable-background:new 0 0 4500 4000;" xml:space="preserve" -->
         <g id="I_L" transform="translate(0,-10)">

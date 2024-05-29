@@ -7,8 +7,8 @@ let template = document.createElement("template");
 template.innerHTML = /*html*/ `
   <style>
         img{
-        width: 16em;
-        height: 16em;
+        width: 10em;
+        height: 10em;
         border-radius: 24px;
     	}
     /*

@@ -30,20 +30,42 @@ body {
 	font-size: 40pt;
 	font-family: "Lobster";
 }
+
+/*Unlocked CSS*/
+#main {
+	display: grid;
+	grid-template-rows: 3fr 1fr; /*Ogen 3/4 evnetTiles 1/4*/
+}
 #face {
-	padding-bottom: 2em;
+	padding-top: 2em;
 }
 .content {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(6, 1fr);
 	place-items: center;
-	gap: 25px;
+	gap: 30px;
 	margin: auto;
 	overflow-y: auto;
-	height: 560px;
+	height: 10.5em;
 	width: 90vw;
 }
 .F {
-	height: 16em;
-	width: 16em;
+	height: 10em;
+	width: 10em;
+}
+.notice {
+	font-size: 15pt;
+	margin-top: -0.1em;
+	font-family: "Open Sans", sans-serif;
+}
+.scroll {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr;
+	margin: auto;
+	place-items: center;
+	opacity: 40%;
+}
+.down {
+	margin-top: -3em;
 }
