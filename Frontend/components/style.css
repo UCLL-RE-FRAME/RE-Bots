@@ -19,7 +19,6 @@ body {
 	--ucll-blue: #002757;
 	--ucll-sky: #9fdaf9;
 }
-
 :host {
 	overflow: hidden;
 }
