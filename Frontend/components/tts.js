@@ -29,7 +29,7 @@ window.customElements.define(
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                height: 95%;
+                height: 85%;
 				width:80%;
 				background: #ecf0f3;
   				box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
@@ -45,12 +45,11 @@ window.customElements.define(
 				color: gray;
 			  }
 			input {
-				margin-top:25px;
+				margin-top:10px;
 				background: #ecf0f3;
-				padding: 10px;
 				padding-left: 30%;
-				height: 50px;
-				font-size: 14px;
+				height: 3em;
+				font-size: 12px;
 				border-radius: 50px;
 				box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 			  }
@@ -64,9 +63,8 @@ window.customElements.define(
 			  }
 			  button {
 				color: white;
-				margin-top: 10px;
 				background: #002757;
-				height: 80px;
+				height: 2em;
 				border-radius: 20px;
 				cursor: pointer;
 				font-weight: 900;
@@ -79,9 +77,9 @@ window.customElements.define(
 				box-shadow: none;
 			  }
 			  .brand-title {
-				margin-top: 10px;
+				margin-top: -5px;
 				font-weight: 900;
-				font-size: 1.3rem;
+				font-size: 0.9rem;
 				color: #e00049;
 				letter-spacing: 1px;
 			  }

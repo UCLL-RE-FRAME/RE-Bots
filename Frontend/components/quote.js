@@ -43,9 +43,9 @@ window.customElements.define(
 			<input type="text" name="message" autocomplete="off"/>
       		<br/>
       		<button id="add">ADD</button>
-			<br/>
+			  <br/>
+
 			<hr>
-			<br/>
 			<div id="quotes"></div>
     	`;
 
@@ -76,12 +76,11 @@ window.customElements.define(
 				color: gray;
 			  }
 			input {
-				margin-top:25px;
+				margin-top:10px;
 				background: #ecf0f3;
-				padding: 10px;
 				padding-left: 30%;
-				height: 50px;
-				font-size: 14px;
+				height: 3em;
+				font-size: 12px;
 				border-radius: 50px;
 				box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 			  }
@@ -97,7 +96,7 @@ window.customElements.define(
 				color: white;
 				margin-top: 10px;
 				background: #002757;
-				height: 80px;
+				height: 2em;
 				border-radius: 20px;
 				cursor: pointer;
 				font-weight: 900;
@@ -106,12 +105,14 @@ window.customElements.define(
 				transition: 0.5s;
 			  }
 			  .q {
-				height: 50px;
+				height: 2em;
 				font-weight: 500;
 				font-style: italic;
 				background: #e00049;
 			  }
-			  
+			  #add{
+				margin-top: 0;
+			  }
 			  button:hover {
 				box-shadow: none;
 			  }

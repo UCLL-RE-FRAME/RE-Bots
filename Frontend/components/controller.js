@@ -12,31 +12,25 @@ const boxSize = 80;
 
 const html = `
 <!-- Grid Column 1-->
-    <div class="tempo">
-        <div class="sliderPanel">
-            <!-- <slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ> -->
-            <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ>
-        </div>
-    </div>
-    <div class="velocity">
-        <div class="sliderPanel">
-            <slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
-        <!-- <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ> -->
-        </div>
-    </div>
-    <div class="move">
-        <joystick-Ƅ id="movement2d"></joystick-Ƅ>
-    </div>
-
-    <!-- Grid Column 2--> 
-    <div class="speech">
-        <tts-Ƅ id="tts"></tts-Ƅ>
-    </div>
     <div class="quote">
         <quote-Ƅ id="quote"></quote-Ƅ>
     </div>
+	<div class="velocity">
+	<div class="sliderPanel">
+		<slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
+		<!-- <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ> -->
+		</div>
+	</div>
     
-    <!-- Grid Coliumn 3-->
+<!-- Grid Column 2--> 
+    <div class="move">
+        <joystick-Ƅ id="movement2d"></joystick-Ƅ>
+    </div>
+	<div class="speech">
+        <tts-Ƅ id="tts"></tts-Ƅ>
+    </div>
+
+<!-- Grid Coliumn 3-->
     <div class="sound">
         <soundboard-Ƅ id="sounds"></soundboard-Ƅ>
     </div>
@@ -48,6 +42,7 @@ const html = `
     <div class="echo">
         <json-Ƅ id="json"></json-Ƅ>
     </div>
+
     -->
 `;
 
@@ -58,7 +53,7 @@ style.textContent = `
         box-sizing: border-box;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 1fr 2fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         place-items: center;
         height: 100%;
         width: 100%;
@@ -74,41 +69,38 @@ style.textContent = `
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    
+    .quote {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1/5;
+        width: 100%;
+        height: 65%;
+		margin-top: -45%;
+    }
     .velocity {
         position: relative;
         grid-column: 1;
-        grid-row: 1;
+        grid-row: 4;
         width: 100%;
-        height: 100%;
+        height: 125%;
+		margin-top: -1.4em;
     }
-    .sound {
-        position: relative;
-        grid-column: 3;
-        grid-row: 1/5;
-        width: 100%;
-        height: 95%;
-    }
-    .quote {
+
+    .move {
         position: relative;
         grid-column: 2;
-        grid-row: 3/5;
+        grid-row: 1/4;
         width: 100%;
-        height: 90%;
+        height: 100%;
+        margin-top: -4em;
     }
     .speech {
         position: relative;
         grid-column: 2;
-        grid-row: 1/3;
+        grid-row: 4/5;
         width: 100%;
-        height: 95%;
-    }
-    .move {
-        position: relative;
-        grid-column: 1;
-        grid-row: 3/5;
-        width: 100%;
-        height: 100%;
+        height: 120%;
+        margin-top: -2em;
     }
     .tempo {
         position: relative;
@@ -120,11 +112,19 @@ style.textContent = `
     
     .echo {
         position: relative;
-        grid-column: 1;
-        grid-row: 3;
+        grid-column: 2;
+        grid-row: 4;
         width: 100%;
         height: 100%;
     }
+    .sound {
+        position: relative;
+        grid-column: 3;
+        grid-row: 1/5;
+        width: 100%;
+        height: 95%;
+    }
+
     
     .sliderPanel{
         box-sizing: border-box;

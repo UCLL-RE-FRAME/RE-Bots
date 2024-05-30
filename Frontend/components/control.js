@@ -7,7 +7,7 @@ import "./emotionControl.js";
 
 //#region TEMPLATE
 
-const pageSelector_template = document.createElement('template');
+const pageSelector_template = document.createElement("template");
 pageSelector_template.innerHTML = /* html */ `
 
 <style>
@@ -83,38 +83,55 @@ pageSelector_template.innerHTML = /* html */ `
     -->
     <face-ʤ></face-ʤ>
 </div>
+</div>
 `;
 //#endregion TEMPLATE
 
 //#region CLASS
-window.customElements.define('j_con-ɮ', class extends HTMLElement {
-    constructor() {
-        super();
-        this._shadowRoot = this.attachShadow({ 'mode': 'open' });
-        this._shadowRoot.appendChild(pageSelector_template.content.cloneNode(true));
-        this.socket = new WebSocket('ws://essadji.be:2105');
-        this.addEventListener("move", (e) => {
-            this.socket.send(JSON.stringify({ "payload": "move", "target": e.detail.source, "x": e.detail.valueX, "y": e.detail.valueY }))
-        });
-    }
+window.customElements.define(
+	"j_con-ɮ",
+	class extends HTMLElement {
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(
+				pageSelector_template.content.cloneNode(true)
+			);
+			this.socket = new WebSocket("ws://essadji.be:2105");
+			this.addEventListener("move", (e) => {
+				this.socket.send(
+					JSON.stringify({
+						payload: "move",
+						target: e.detail.source,
+						x: e.detail.valueX,
+						y: e.detail.valueY,
+					})
+				);
+			});
+		}
 
-    connectedCallback() {
-        this.socket.addEventListener('open', event => {
-            // console.log("opening socket for controller ...")
-            this.socket.send(JSON.stringify({ "payload": 'Hello server, I will be your controller today.' }));
-        });
-        this.socket.addEventListener('message', event => {
-            // console.log('Message from server ', event.data);
-        });
+		connectedCallback() {
+			this.socket.addEventListener("open", (event) => {
+				// console.log("opening socket for controller ...")
+				this.socket.send(
+					JSON.stringify({
+						payload:
+							"Hello server, I will be your controller today.",
+					})
+				);
+			});
+			this.socket.addEventListener("message", (event) => {
+				// console.log('Message from server ', event.data);
+			});
+		}
 
-    }
+		handler(e) {
+			this.socket.send(JSON.stringify({payload: e.target.id}));
+		}
 
-    handler(e) {
-        this.socket.send(JSON.stringify({ "payload": e.target.id }))
-    }
-
-    set content(x) {
-        this.$content.innerHTML = x;
-    }
-});
-  //#endregion CLASS
+		set content(x) {
+			this.$content.innerHTML = x;
+		}
+	}
+);
+//#endregion CLASS
