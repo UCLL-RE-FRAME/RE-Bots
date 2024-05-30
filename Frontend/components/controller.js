@@ -55,9 +55,9 @@ style.textContent = `
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr 1fr 1fr 1fr;
         place-items: center;
-        height: 100%;
-        width: 100%;
-        /*
+        height: 99vh;
+        width: 99vw;
+		/*
         height: ${height}%;
         width: ${width}%;
         background: #ecf0f3;
@@ -124,8 +124,6 @@ style.textContent = `
         width: 100%;
         height: 95%;
     }
-
-    
     .sliderPanel{
         box-sizing: border-box;
         position: absolute;

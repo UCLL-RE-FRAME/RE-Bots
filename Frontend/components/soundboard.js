@@ -64,7 +64,8 @@ window.customElements.define(
           .btn {
               border-radius: 30px;
               padding: 5px 10px;
-              font-size: 24px;
+              font-size: 20px;
+              font-weight: 600;
               text-decoration: none;
               margin-left:10%;
               color: #fff;

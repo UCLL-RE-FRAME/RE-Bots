@@ -71,6 +71,7 @@ window.customElements.define(
 				font-size: larger;
 				box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
 				transition: 0.5s;
+				margin-top: -0.5em;
 			  }
 			  
 			  button:hover {
