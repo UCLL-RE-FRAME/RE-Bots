@@ -3,6 +3,7 @@ import "./pageSelector.js";
 import "./camera.js";
 import "./james.js";
 import "./emotionControl.js";
+import "./slider.js";
 //#endregion IMPORTS
 
 //#region TEMPLATE
@@ -17,13 +18,13 @@ pageSelector_template.innerHTML = /* html */ `
     }
     .grid-container {
         display:grid;
-        grid-template-columns: 300px auto auto 300px;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-row: 1fr 1fr 1fr;
+        margin: 1em;
     }
     page-selector-ɮ {
-        grid-column-start: 1;
-        grid-column-end: 5;
-        grid-row-start: 1;
-        grid-row-end: 2;
+        grid-column: 1/5;
+        grid-row: 1;
     }
 /*  
   camera-ɮ {
@@ -34,56 +35,64 @@ pageSelector_template.innerHTML = /* html */ `
     }
      */
     lever-ɮ#eye_L {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        grid-row-end: 4;
+        grid-column: 1/2;
+        grid-row: 2/4;
     }
     lever-ɮ#eye_R {
-        grid-column-start: 4;
-        grid-column-end: 5;
-        grid-row-start: 3;
-        grid-row-end: 4;
+        grid-column: 4/5;
+        grid-row: 2/4;
     }
     lever-ɮ#pupil_L {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 4;
-        grid-row-end: 5;
+        grid-column: 1/2;
+        grid-row: 4/5;
     }
     lever-ɮ#pupil_R {
-        grid-column-start: 4;
-        grid-column-end: 5;
-        grid-row-start: 4;
-        grid-row-end: 5;
+        grid-column: 4/5;
+        grid-row: 4/5;
     }
     james-ʤ {
-        grid-column-start: 2;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 5;
+        grid-column: 2/4;
+        grid-row: 2/5;
     }
     face-ʤ {
-        grid-column-start: 2;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 5;
+        grid-column: 2/4;
+        grid-row: 2/5;
+        height: 120%;
+    }
+    .sliderPanel{
+        
+        box-sizing: border-box;
+        background: #ecf0f3;
+        box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+        border-radius: 8px;
+
+        height: 90%;
+        width: 301px;
+        padding-left: 2em;
+        padding-top: 0.5em;
     }
 
 </style>
 
 <div class="grid-container">
     <page-selector-ɮ></page-selector-ɮ>
+    <div class="sliderPanel">
+        <slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
+    </div>
+    <div class="sliderPanel">
+        <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ>
+    </div>
     <emotion-control-ɮ id="eye_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="eye_R"></emotion-control-ɮ>
+    <face-ʤ></face-ʤ>
+
     <!--
     <emotion-control-ɮ id="pupil_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="pupil_R"></emotion-control-ɮ>
     <james-ʤ></james-ʤ>
     -->
-    <face-ʤ></face-ʤ>
 </div>
-</div>
+
 `;
 //#endregion TEMPLATE
 

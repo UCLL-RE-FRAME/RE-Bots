@@ -42,10 +42,10 @@ window.customElements.define(
 			this.style = document.createElement("style");
 			this.style.textContent = `
     :host {
-     
-  }
+
+    }
     .header {
-      margin-top: 10px;
+      margin-top: 5px;
       font-weight: 900;
       font-size: 1rem;
       color: #555b5e;

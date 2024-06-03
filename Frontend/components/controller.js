@@ -16,11 +16,12 @@ const html = `
         <quote-Ƅ id="quote"></quote-Ƅ>
     </div>
 	<div class="velocity">
-	<div class="sliderPanel">
-		<slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
-		<!-- <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ> -->
+		<div class="sliderPanel">
+			<slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
+			<!-- <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ> -->
 		</div>
 	</div>
+	<button id="pref"><a href="#">Preferences</a></button>
     
 <!-- Grid Column 2--> 
     <div class="move">
@@ -53,17 +54,11 @@ style.textContent = `
         box-sizing: border-box;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(4,1fr);
         place-items: center;
-        height: 99vh;
+        height: 89vh;
         width: 99vw;
-		/*
-        height: ${height}%;
-        width: ${width}%;
-        background: #ecf0f3;
-        box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-        border-radius: 20px;
-        */
+
         position: fixed;
         top: 50%;
         left: 50%;
@@ -82,8 +77,8 @@ style.textContent = `
         grid-column: 1;
         grid-row: 4;
         width: 100%;
-        height: 125%;
-		margin-top: -1.4em;
+        height: 120%;
+		margin-top: -1.8em;
     }
 
     .move {
@@ -120,9 +115,10 @@ style.textContent = `
     .sound {
         position: relative;
         grid-column: 3;
-        grid-row: 1/5;
+        grid-row: 1/4;
         width: 100%;
-        height: 95%;
+        height: 110%;
+		margin-top: 2.4em;
     }
     .sliderPanel{
         box-sizing: border-box;
@@ -140,6 +136,25 @@ style.textContent = `
         padding-left: 10%;
         padding-top:2%
     }
+	#pref {
+		margin-top: 10px;
+		background: #e00049;
+		height: 2.5em;
+		width: 80%;
+		border-radius: 20px;
+		cursor: pointer;
+		font-weight: 600;
+		font-size: larger;
+		transition: 0.5s;
+		margin-bottom: -2.5em;
+	  }
+	  #pref a{
+		color: #fff;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+		box-shadow: none;
+	}
 
 `;
 
