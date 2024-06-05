@@ -66,6 +66,7 @@ window.customElements.define(
 				this.socket.send(
 					JSON.stringify({payload: this.$ipInput.value})
 				);
+				console.log("mqtt://" + this.$ipInput.value);
 			});
 
 			this.socket.addEventListener("open", (event) => {
