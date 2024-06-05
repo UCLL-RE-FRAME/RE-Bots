@@ -10,70 +10,24 @@ import "./slider.js";
 
 const pageSelector_template = document.createElement("template");
 pageSelector_template.innerHTML = /* html */ `
-
+<link href="../Components/style.css" rel="stylesheet" type="text/css"> 
 <style>
-    :host {
-        background-color: var(--base);
-        overflow-x: hidden;
-    }
-    .grid-container {
-        display:grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-row: 1fr 1fr 1fr;
-        margin: 1em;
-    }
-    page-selector-ɮ {
-        grid-column: 1/5;
-        grid-row: 1;
-    }
-/*  
-  camera-ɮ {
-        grid-column-start: 2;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end: 4;
-    }
-     */
-    lever-ɮ#eye_L {
-        grid-column: 1/2;
-        grid-row: 2/4;
-    }
-    lever-ɮ#eye_R {
-        grid-column: 4/5;
-        grid-row: 2/4;
-    }
-    lever-ɮ#pupil_L {
-        grid-column: 1/2;
-        grid-row: 4/5;
-    }
-    lever-ɮ#pupil_R {
-        grid-column: 4/5;
-        grid-row: 4/5;
-    }
-    james-ʤ {
-        grid-column: 2/4;
-        grid-row: 2/5;
-    }
-    face-ʤ {
-        grid-column: 2/4;
-        grid-row: 2/5;
-        height: 120%;
-    }
-    .sliderPanel{
-        
-        box-sizing: border-box;
-        background: #ecf0f3;
-        box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-        border-radius: 8px;
+:host {
+    background-color: var(--base);
+    overflow-x: hidden;
+}
+.sliderPanel {
+	box-sizing: border-box;
+	background: #ecf0f3;
+	box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+	border-radius: 8px;
 
-        height: 90%;
-        width: 301px;
-        padding-left: 2em;
-        padding-top: 0.5em;
-    }
-
+	height: 90%;
+	width: 301px;
+	padding-left: 2em;
+	padding-top: 0.5em;
+}
 </style>
-
 <div class="grid-container">
     <page-selector-ɮ></page-selector-ɮ>
     <div class="sliderPanel">
@@ -85,14 +39,12 @@ pageSelector_template.innerHTML = /* html */ `
     <emotion-control-ɮ id="eye_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="eye_R"></emotion-control-ɮ>
     <face-ʤ></face-ʤ>
-
     <!--
     <emotion-control-ɮ id="pupil_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="pupil_R"></emotion-control-ɮ>
     <james-ʤ></james-ʤ>
     -->
 </div>
-
 `;
 //#endregion TEMPLATE
 

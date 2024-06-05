@@ -48,6 +48,8 @@ body {
 	overflow-y: auto;
 	height: 10.5em;
 	width: 90vw;
+	scrollbar-color: #e00049 #9fdaf9;
+	scrollbar-width: thin;
 }
 .F {
 	height: 10em;
@@ -73,7 +75,7 @@ body {
 /*PAGESELECTOR CSS*/
 .pageSelector {
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	grid-template-columns: repeat(8, 1fr);
 	gap: 1em;
 
 	margin-bottom: 1em;
@@ -113,6 +115,7 @@ body {
 #btnBack {
 	grid-column: 1;
 	height: 100%;
+	font-size: 30px;
 }
 #btnShow {
 	grid-column: 2;
@@ -122,8 +125,8 @@ body {
 #btnFwd {
 	grid-column: 3;
 	height: 100%;
+	font-size: 30px;
 }
-
 button {
 	background-color: #002757;
 	border: none;
@@ -138,4 +141,143 @@ button {
 	border-radius: 8px;
 	border: #bbb solid 0.5px;
 	font-size: 15px;
+}
+#ipForm {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	margin-top: 0.38em;
+	height: 75%;
+	width: 90%;
+}
+#ipForm > button {
+	width: 3em;
+	border-radius: 8px 0 0 8px;
+}
+#ipForm > input {
+	border-radius: 0 8px 8px 0;
+}
+
+/*CONTROLLER CSS (ADVANCED)*/
+.quote {
+	position: relative;
+	grid-column: 1;
+	grid-row: 1/5;
+	width: 100%;
+	height: 65%;
+	margin-top: -45%;
+}
+.velocity {
+	position: relative;
+	grid-column: 1;
+	grid-row: 4;
+	width: 100%;
+	height: 120%;
+	margin-top: -1.8em;
+}
+
+.move {
+	position: relative;
+	grid-column: 2;
+	grid-row: 1/4;
+	width: 100%;
+	height: 100%;
+	margin-top: -4em;
+}
+.speech {
+	position: relative;
+	grid-column: 2;
+	grid-row: 4/5;
+	width: 100%;
+	height: 120%;
+	margin-top: -2em;
+}
+.tempo {
+	position: relative;
+	grid-column: 1;
+	grid-row: 2;
+	width: 100%;
+	height: 100%;
+}
+
+.echo {
+	position: relative;
+	grid-column: 2;
+	grid-row: 4;
+	width: 100%;
+	height: 100%;
+}
+.sound {
+	position: relative;
+	grid-column: 3;
+	grid-row: 1/4;
+	width: 100%;
+	height: 110%;
+	margin-top: 2.4em;
+}
+
+#pref {
+	margin-top: 10px;
+	background: #e00049;
+	height: 2.5em;
+	width: 80%;
+	border-radius: 20px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: larger;
+	transition: 0.5s;
+	margin-bottom: -2.5em;
+}
+#pref a {
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+/*CONTROL CSS (UI/PREF)*/
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 0.8fr 1fr 3fr;
+	margin: 1em;
+}
+page-selector-ɮ {
+	grid-column: 1/5;
+	grid-row: 1;
+}
+/*  
+camera-ɮ {
+	gird-column: 2/4;
+	grid-row: 2/4;
+}
+ */
+lever-ɮ#eye_L {
+	grid-column: 1;
+	grid-row: 3;
+}
+lever-ɮ#eye_R {
+	grid-column: 3;
+	grid-row: 3;
+}
+/*
+lever-ɮ#pupil_L {
+	grid-column: 1/2;
+	grid-row: 4/5;
+}
+lever-ɮ#pupil_R {
+	grid-column: 4/5;
+	grid-row: 4/5;
+}
+*/
+
+james-ʤ {
+	grid-column: 2/4;
+	grid-row: 2/5;
+}
+face-ʤ {
+	grid-column: 2/4;
+	grid-row: 2/5;
+	height: 120%;
 }

@@ -8,11 +8,9 @@ const succes_send_color = "\x1b[35m%s\x1b[0m"; // purple
 const didnt_send_color = "\x1b[36m%s\x1b[0m"; // blue
 
 const messageEmitter = new EventEmitter();
-
 const sendMessageData = (data) => {
 	messageEmitter.emit("messageUpdated", `${data}`);
 };
-
 let connection;
 
 let connected_for_publishing = false;

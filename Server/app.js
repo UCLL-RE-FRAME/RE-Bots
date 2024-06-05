@@ -31,6 +31,16 @@ APP.get("/", (req, res) => {
 	// fs.createReadStream('./index.html').pipe(res);
 });
 
+APP.use(
+	express.static("public", {
+		setHeaders: (res, path) => {
+			if (path.endsWith(".js")) {
+				res.setHeader("Content-Type", "application/javascript");
+			}
+		},
+	})
+);
+
 APP.post("/", express.json(), (req, res) => {
 	// let message = req.body.message;
 	return res.json({

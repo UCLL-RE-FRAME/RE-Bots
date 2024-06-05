@@ -11,6 +11,7 @@ const width = 75;
 const boxSize = 80;
 
 const html = `
+<link href="../Components/style.css" rel="stylesheet" type="text/css">   
 <!-- Grid Column 1-->
     <div class="quote">
         <quote-Ƅ id="quote"></quote-Ƅ>
@@ -43,7 +44,6 @@ const html = `
     <div class="echo">
         <json-Ƅ id="json"></json-Ƅ>
     </div>
-
     -->
 `;
 
@@ -64,98 +64,22 @@ style.textContent = `
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    .quote {
-        position: relative;
-        grid-column: 1;
-        grid-row: 1/5;
-        width: 100%;
-        height: 65%;
-		margin-top: -45%;
-    }
-    .velocity {
-        position: relative;
-        grid-column: 1;
-        grid-row: 4;
-        width: 100%;
-        height: 120%;
-		margin-top: -1.8em;
-    }
-
-    .move {
-        position: relative;
-        grid-column: 2;
-        grid-row: 1/4;
-        width: 100%;
-        height: 100%;
-        margin-top: -4em;
-    }
-    .speech {
-        position: relative;
-        grid-column: 2;
-        grid-row: 4/5;
-        width: 100%;
-        height: 120%;
-        margin-top: -2em;
-    }
-    .tempo {
-        position: relative;
-        grid-column: 1;
-        grid-row: 2;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .echo {
-        position: relative;
-        grid-column: 2;
-        grid-row: 4;
-        width: 100%;
-        height: 100%;
-    }
-    .sound {
-        position: relative;
-        grid-column: 3;
-        grid-row: 1/4;
-        width: 100%;
-        height: 110%;
-		margin-top: 2.4em;
-    }
-    .sliderPanel{
-        box-sizing: border-box;
-        position: absolute;
-        aspect-ratio: 1/1;
-        background: #ecf0f3;
-        box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-        border-radius: 20px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 80%;
-        width: 80%;
-        /* height: ${boxSize}%; */
-        padding-left: 10%;
-        padding-top:2%
-    }
-	#pref {
-		margin-top: 10px;
-		background: #e00049;
-		height: 2.5em;
-		width: 80%;
+	.sliderPanel {
+		box-sizing: border-box;
+		position: absolute;
+		aspect-ratio: 1/1;
+		background: #ecf0f3;
+		box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 		border-radius: 20px;
-		cursor: pointer;
-		font-weight: 600;
-		font-size: larger;
-		transition: 0.5s;
-		margin-bottom: -2.5em;
-	  }
-	  #pref a{
-		color: #fff;
-		width: 100%;
-		height: 100%;
-		text-decoration: none;
-		box-shadow: none;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 80%;
+		width: 80%;
+		/* height: ${boxSize}%; */
+		padding-left: 10%;
+		padding-top: 2%;
 	}
-
 `;
 
 // Make a variable to hold data for every inputsensor
