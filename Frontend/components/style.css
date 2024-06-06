@@ -32,12 +32,13 @@ body {
 	font-family: "Lobster";
 }
 
-/*UNLOCKED CSS*/
+/******************************UNLOCKED CSS*******************************/
 #main-unl {
 	display: grid;
-	grid-template-rows: 3fr 1fr; /*Ogen 3/4 evnetTiles 1/4*/
+	grid-template-rows: 3fr 1fr;
 }
 #face {
+	grid-row: 1;
 	padding-top: 2em;
 }
 .content {
@@ -45,22 +46,21 @@ body {
 	grid-template-columns: repeat(6, 1fr);
 	place-items: center;
 	gap: 30px;
+
 	margin: auto;
 	overflow-y: auto;
-	height: 10.5em;
+
+	height: 11em;
 	width: 90vw;
+	margin-top: -15px;
 	scrollbar-color: #e00049 #9fdaf9;
-	scrollbar-width: thin;
+	grid-row: 1;
 }
 .F {
 	height: 10em;
 	width: 10em;
 }
-.notice {
-	font-size: 15pt;
-	margin-top: -0.1em;
-	font-family: "Open Sans", sans-serif;
-}
+
 .scroll {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
@@ -69,8 +69,19 @@ body {
 	place-items: center;
 	opacity: 40%;
 }
+.notice {
+	font-size: 15pt;
+	margin-top: -0.3em;
+	font-family: "Open Sans", sans-serif;
+}
 .down {
 	margin-top: -3em;
+}
+
+#secondRow {
+	position: fixed;
+	left: 4.55em;
+	top: 71.5vh;
 }
 
 /******************************PAGESELECTOR CSS*******************************/
