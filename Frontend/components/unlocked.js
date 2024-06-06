@@ -9,7 +9,7 @@ import "./beurs.js";
 let template = document.createElement("template");
 template.innerHTML = /*html*/ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
-<div id="main">
+<div id="main-unl">
     <div id="face">
         <face-ʤ class="eyes"></face-ʤ>
     </div>
@@ -57,7 +57,7 @@ window.customElements.define(
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this.$links = this._shadowRoot.querySelectorAll("link-ʤ");
 			this.$beurs = this._shadowRoot.querySelector("beurs-ʤ");
-			this.$main = this._shadowRoot.querySelector("#main");
+			this.$main = this._shadowRoot.querySelector("#main-unl");
 			this.socket = new WebSocket("ws://essadji.be:2105");
 			this.addEventListener("move", (e) => {
 				this.socket.send(

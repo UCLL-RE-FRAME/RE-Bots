@@ -1,5 +1,6 @@
 body {
-	margin: 0px;
+	margin: 0;
+	padding: 0;
 	overflow: hidden;
 }
 
@@ -32,7 +33,7 @@ body {
 }
 
 /*UNLOCKED CSS*/
-#main {
+#main-unl {
 	display: grid;
 	grid-template-rows: 3fr 1fr; /*Ogen 3/4 evnetTiles 1/4*/
 }
@@ -72,7 +73,7 @@ body {
 	margin-top: -3em;
 }
 
-/*PAGESELECTOR CSS*/
+/******************************PAGESELECTOR CSS*******************************/
 .pageSelector {
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
@@ -158,7 +159,7 @@ button {
 	border-radius: 0 8px 8px 0;
 }
 
-/*CONTROLLER CSS (ADVANCED)*/
+/****************************CONTROLLER CSS (AVD)******************************/
 .quote {
 	position: relative;
 	grid-column: 1;
@@ -236,7 +237,7 @@ button {
 	box-shadow: none;
 }
 
-/*CONTROL CSS (UI/PREF)*/
+/****************************CONTROL (UI/PREF) CSS******************************/
 .grid-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -285,4 +286,35 @@ face-ʤ {
 	grid-column: 2/4;
 	grid-row: 2/5;
 	height: 120%;
+}
+
+/********************************STARTPAGE CSS*********************************/
+#main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 4fr 1fr;
+
+	background-color: #9fdaf9;
+	width: 100vw;
+	height: 100vh;
+}
+#face-wel {
+	padding-top: 3em;
+}
+#greetingsContainer {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	place-items: center;
+	margin-top: -5em;
+	color: #e00049;
+}
+#greeting {
+	font-size: 3.5em;
+}
+#underGreeting {
+	grid-column: 1;
+	grid-row: 2;
+	margin-top: -3em;
+	font-size: 2em;
 }

@@ -15,12 +15,13 @@ APP.use("/ui", express.static("./Interfaces/UI"));
 APP.use("/advanced", express.static("./Interfaces/VIEW"));
 APP.use("/eudres", express.static("./Interfaces/EUDRES"));
 APP.use("/beurs", express.static("./Interfaces/UNLOCKED"));
+APP.use("/welcome", express.static("./interfaces/STARTPAGE"));
 // PARTS
 APP.use("/components", express.static("../Frontend/components"));
 APP.use("/data", express.static("./data"));
 APP.use("/media", express.static("./media"));
 APP.use("/images", express.static("./images"));
-// APP.use('/util', express.static('./util'));
+APP.use("/util", express.static("./util"));
 
 // Let's create the regular HTTP request and response
 APP.get("/", (req, res) => {
