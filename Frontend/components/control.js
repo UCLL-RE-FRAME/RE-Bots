@@ -39,9 +39,11 @@ pageSelector_template.innerHTML = /* html */ `
     <emotion-control-ɮ id="eye_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="eye_R"></emotion-control-ɮ>
     <face-ʤ></face-ʤ>
+	<!--
 	<div id="interface-container">
 		<interface-ʤ></interface-ʤ>
 	</div>
+	-->
     <!--
     <emotion-control-ɮ id="pupil_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="pupil_R"></emotion-control-ɮ>

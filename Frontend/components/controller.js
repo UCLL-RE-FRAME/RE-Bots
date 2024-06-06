@@ -101,7 +101,7 @@ window.customElements.define(
 			this._shadowroot = this.attachShadow({mode: "open"});
 			this._shadowroot.innerHTML = html;
 			this._shadowroot.appendChild(style);
-
+			this.$pref = this._shadowroot.getElementById("#pref");
 			this.socket = new WebSocket(`ws://localhost:2105`);
 		}
 
