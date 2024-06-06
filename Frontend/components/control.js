@@ -39,11 +39,13 @@ pageSelector_template.innerHTML = /* html */ `
     <emotion-control-ɮ id="eye_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="eye_R"></emotion-control-ɮ>
     <face-ʤ></face-ʤ>
+	<div id="interface-container">
+		<interface-ʤ></interface-ʤ>
+	</div>
     <!--
     <emotion-control-ɮ id="pupil_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="pupil_R"></emotion-control-ɮ>
-    <james-ʤ></james-ʤ>
-    -->
+	-->
 </div>
 `;
 //#endregion TEMPLATE
@@ -57,6 +59,9 @@ window.customElements.define(
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(
 				pageSelector_template.content.cloneNode(true)
+			);
+			this.$interface = this._shadowRoot.getElementById(
+				"interface-container"
 			);
 			this.socket = new WebSocket("ws://essadji.be:2105");
 			this.addEventListener("move", (e) => {

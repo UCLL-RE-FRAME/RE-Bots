@@ -4,7 +4,7 @@ import "./modal.js";
 //#endregion IMPORTS
 
 //#region TEMPLATE
-const interface_template = document.createElement('template');
+const interface_template = document.createElement("template");
 interface_template.innerHTML = /* html */ `
 <style>
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
@@ -127,99 +127,117 @@ interface_template.innerHTML = /* html */ `
 //#endregion TEMPLATE
 
 //#region CLASS
-window.customElements.define('interface-ʤ', class extends HTMLElement {
-  constructor() {
-    super();
-    this._shadowRoot = this.attachShadow({ 'mode': 'open' });
-    this._shadowRoot.appendChild(interface_template.content.cloneNode(true));
-    this.$content = this._shadowRoot.querySelector('#content');
-    this.$coursesSlider = this._shadowRoot.querySelector('#courses-slider');
-    this.$detailSlider = this._shadowRoot.querySelector('#detail-slider');
-    this.$campusGrid = this._shadowRoot.querySelector('#campus-grid');
-    this.$coursesGrid = this._shadowRoot.querySelector('#courses-grid');
-    this.$detailGrid = this._shadowRoot.querySelector('#details-grid');
-    this.$selection = this._shadowRoot.querySelector('#selection');
-    this.$deselect = this._shadowRoot.querySelector("#deselect");
-    this.$deselect.addEventListener("click", this.deselect.bind(this))
-    this.$grid = this._shadowRoot.querySelector('#content');
+window.customElements.define(
+	"interface-ʤ",
+	class extends HTMLElement {
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(
+				interface_template.content.cloneNode(true)
+			);
+			this.$content = this._shadowRoot.querySelector("#content");
+			this.$coursesSlider =
+				this._shadowRoot.querySelector("#courses-slider");
+			this.$detailSlider =
+				this._shadowRoot.querySelector("#detail-slider");
+			this.$campusGrid = this._shadowRoot.querySelector("#campus-grid");
+			this.$coursesGrid = this._shadowRoot.querySelector("#courses-grid");
+			this.$detailGrid = this._shadowRoot.querySelector("#details-grid");
+			this.$selection = this._shadowRoot.querySelector("#selection");
+			this.$deselect = this._shadowRoot.querySelector("#deselect");
+			this.$deselect.addEventListener("click", this.deselect.bind(this));
+			this.$grid = this._shadowRoot.querySelector("#content");
 
-    fetch("../data/opleidingen.json")
-      .then(response => response.json())
-      .then(json => {
-        this.opleidingen = json;
-        Object.keys(this.opleidingen).map((opleiding => {
-          let c = document.createElement('container')
-          let o = document.createElement('opleiding-ʤ');
+			fetch("../data/opleidingen.json")
+				.then((response) => response.json())
+				.then((json) => {
+					this.opleidingen = json;
+					Object.keys(this.opleidingen).map((opleiding) => {
+						let c = document.createElement("container");
+						let o = document.createElement("opleiding-ʤ");
 
-          c.setAttribute("slot", "richting")
-          c.innerHTML = opleiding;
-          o.append(c)
-          o.id = opleiding;
+						c.setAttribute("slot", "richting");
+						c.innerHTML = opleiding;
+						o.append(c);
+						o.id = opleiding;
 
-          let richtingen = this.opleidingen[opleiding].Afstudeerrichtingen;
-          let stringbuilder = '';
-          let ac = document.createElement('container')
-          ac.setAttribute("slot", "afstudeerrichting")
+						let richtingen =
+							this.opleidingen[opleiding].Afstudeerrichtingen;
+						let stringbuilder = "";
+						let ac = document.createElement("container");
+						ac.setAttribute("slot", "afstudeerrichting");
 
-          Object.keys(richtingen).map(k => {
-            stringbuilder += k + ("<span class='divider'> | </span>")
-          })
+						Object.keys(richtingen).map((k) => {
+							stringbuilder +=
+								k + "<span class='divider'> | </span>";
+						});
 
-          ac.innerHTML = stringbuilder.substring(0, stringbuilder.length - 32);
-          o.append(ac)
+						ac.innerHTML = stringbuilder.substring(
+							0,
+							stringbuilder.length - 32
+						);
+						o.append(ac);
 
-          o.addEventListener('click', (x) => {
-            this.$deselect.hidden = false;
-            this.$selection.innerHTML = opleiding.toUpperCase();
-            this.$detailSlider.innerHTML = '';
-            this.$coursesGrid.style.display = "none";
+						o.addEventListener("click", (x) => {
+							this.$deselect.hidden = false;
+							this.$selection.innerHTML = opleiding.toUpperCase();
+							this.$detailSlider.innerHTML = "";
+							this.$coursesGrid.style.display = "none";
 
-            Object.keys(this.opleidingen[opleiding].Afstudeerrichtingen).map((afstudeerrichting => {
-              let c = document.createElement('container')
-              let o = document.createElement('opleiding-ʤ');
+							Object.keys(
+								this.opleidingen[opleiding].Afstudeerrichtingen
+							).map((afstudeerrichting) => {
+								let c = document.createElement("container");
+								let o = document.createElement("opleiding-ʤ");
 
-              c.setAttribute("slot", "richting")
-              c.innerHTML = afstudeerrichting;
-              //Open Modal
-              o.append(c)
-              o.addEventListener('click', (x) => {
-                let c = document.createElement('container')
-                let m = document.createElement('modal-ɮ');
-                c.setAttribute("slot", "afstudeerrichting")
-                c.innerHTML = afstudeerrichting;
+								c.setAttribute("slot", "richting");
+								c.innerHTML = afstudeerrichting;
+								//Open Modal
+								o.append(c);
+								o.addEventListener("click", (x) => {
+									let c = document.createElement("container");
+									let m = document.createElement("modal-ɮ");
+									c.setAttribute("slot", "afstudeerrichting");
+									c.innerHTML = afstudeerrichting;
 
-                m.append(c)
-                m.addEventListener('click', e => { m.style.display = 'none' })
-                this.$grid.appendChild(m);
-              });
-              o.id = afstudeerrichting;
+									m.append(c);
+									m.addEventListener("click", (e) => {
+										m.style.display = "none";
+									});
+									this.$grid.appendChild(m);
+								});
+								o.id = afstudeerrichting;
 
-              let diplomas = this.opleidingen[opleiding].Afstudeerrichtingen[afstudeerrichting].Diploma;
-              let ac = document.createElement('container')
-              ac.setAttribute("slot", "afstudeerrichting")
-              ac.innerHTML = diplomas.replace(" | ", "<br>");
-              o.append(ac)
+								let diplomas =
+									this.opleidingen[opleiding]
+										.Afstudeerrichtingen[afstudeerrichting]
+										.Diploma;
+								let ac = document.createElement("container");
+								ac.setAttribute("slot", "afstudeerrichting");
+								ac.innerHTML = diplomas.replace(" | ", "<br>");
+								o.append(ac);
 
-              this.$detailSlider.appendChild(o);
-            }));
-            this.$detailGrid.style.display = "grid";
-          })
-          this.$coursesSlider.appendChild(o);
-        }))
-      });
-  }
+								this.$detailSlider.appendChild(o);
+							});
+							this.$detailGrid.style.display = "grid";
+						});
+						this.$coursesSlider.appendChild(o);
+					});
+				});
+		}
 
-  deselect() {
-    this.$coursesGrid.style.display = "grid";
-    this.$detailGrid.style.display = "none";
-    this.$deselect.hidden = true;
-  }
-  setBackground(url) {
-    this.$content.style.backgroundImage = `url(${url})`;
-  }
-  set content(x) {
-    this.$content.innerHTML = x;
-  }
-
-});
-  //#endregion CLASS
+		deselect() {
+			this.$coursesGrid.style.display = "grid";
+			this.$detailGrid.style.display = "none";
+			this.$deselect.hidden = true;
+		}
+		setBackground(url) {
+			this.$content.style.backgroundImage = `url(${url})`;
+		}
+		set content(x) {
+			this.$content.innerHTML = x;
+		}
+	}
+);
+//#endregion CLASS

@@ -272,10 +272,15 @@ lever-ɮ#pupil_R {
 }
 */
 
-james-ʤ {
-	grid-column: 2/4;
-	grid-row: 2/5;
-}
+/* james-ʤ {
+	position: absolute;
+	top: 5em;
+	left: 0;
+	max-width: 95vw;
+	max-height: 90vh;
+	min-width: 95vw;
+	min-height: 90vw;
+} */
 face-ʤ {
 	grid-column: 2/4;
 	grid-row: 2/5;
