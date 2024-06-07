@@ -2,7 +2,7 @@
 import "./face.js";
 //endregion IMPORTS
 //region TEMPLATE
-let template = document.createElement("template");
+const template = document.createElement("template");
 template.innerHTML = /*HTML*/ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 <div id="main">

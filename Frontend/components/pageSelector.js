@@ -1,4 +1,5 @@
 //#region IMPORTS
+import "./toggle.js";
 //#endregion IMPORTS
 
 //#region TEMPLATE
@@ -7,7 +8,7 @@ emotion_control_template.innerHTML = /* html */ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 
 <div class="pageSelector">
-    <!--<button id="btnClients">ENUMERATE CLIENTS</button>
+    <!--<button id="btnClients">ENUMERATE CLIENTS</button>-->
     <div id="loginForm" class="gridItem">
         <button id="btnLogin">Login</button>
         <input type="text" id="user" placeholder="Name"/>
@@ -20,11 +21,10 @@ emotion_control_template.innerHTML = /* html */ `
         <button id="btnBack">&#129080</button>
         <button id="btnShow">Slideshow</button>
         <button id="btnFwd">&#129082</button>
-    </div> 
-	-->
+    </div>
+
     <button id="btnInterface" class="gridItem">Show Interface</button>
     <button id="btnFace" class="gridItem">Show James</button>
-
     <select id="dropDown" class="gridItem">
         <option value="../images/toren.jpg">Toren</option>
         <option value="../images/panorama.png" selected>Panorama</option>
@@ -35,6 +35,8 @@ emotion_control_template.innerHTML = /* html */ `
 		<input type="text" id="ipAddress" name="ip" placeholder="Change IP-address"/>
 	</div>
 </div>
+<toggle-ɠ></toggle-ɠ>
+
 `;
 //#endregion TEMPLATE
 
