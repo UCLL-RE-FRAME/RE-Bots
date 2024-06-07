@@ -50,7 +50,7 @@ body {
 	margin: auto;
 	overflow-y: auto;
 
-	height: 11em;
+	height: 11.8em;
 	width: 90vw;
 	margin-top: -15px;
 	scrollbar-color: #e00049 #9fdaf9;
@@ -71,7 +71,7 @@ body {
 }
 .notice {
 	font-size: 15pt;
-	margin-top: -0.3em;
+	margin-top: -0.1em;
 	font-family: "Open Sans", sans-serif;
 }
 .down {
