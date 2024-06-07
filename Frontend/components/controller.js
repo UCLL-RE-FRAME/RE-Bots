@@ -22,7 +22,7 @@ const html = `
 			<!-- <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ> -->
 		</div>
 	</div>
-	<button id="pref"><a href="#">Preferences</a></button>
+	<button id="pref">Preferences</button>
     
 <!-- Grid Column 2--> 
     <div class="move">
@@ -106,6 +106,9 @@ window.customElements.define(
 		}
 
 		connectedCallback() {
+			this.$pref.addEventListener("click", () => {
+				window.location.href = "http://localhost:2105/ui";
+			});
 			this.socket.addEventListener("message", (event) => {
 				let incoming;
 				console.dir(event);
