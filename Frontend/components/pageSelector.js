@@ -7,7 +7,7 @@ emotion_control_template.innerHTML = /* html */ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 
 <div class="pageSelector">
-    <!--<button id="btnClients">ENUMERATE CLIENTS</button>-->
+    <!--<button id="btnClients">ENUMERATE CLIENTS</button>
     <div id="loginForm" class="gridItem">
         <button id="btnLogin">Login</button>
         <input type="text" id="user" placeholder="Name"/>
@@ -21,7 +21,7 @@ emotion_control_template.innerHTML = /* html */ `
         <button id="btnShow">Slideshow</button>
         <button id="btnFwd">&#129082</button>
     </div> 
-
+	-->
     <button id="btnInterface" class="gridItem">Show Interface</button>
     <button id="btnFace" class="gridItem">Show James</button>
 
