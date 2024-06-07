@@ -10,6 +10,7 @@ let template = document.createElement("template");
 template.innerHTML = /*html*/ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 <div id="main-unl">
+	<span class="backBtns">&#129144;</span>
     <div id="face">
         <face-ʤ class="eyes"></face-ʤ>
     </div>
@@ -37,12 +38,7 @@ template.innerHTML = /*html*/ `
 		</div>
 		<div class="scroll">
 			<p class="notice">scroll for more of our projects and events...</p>
-			<svg class="down" fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-				viewBox="0 0 330 330" xml:space="preserve">
-				<path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
-					c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
-					s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
-			</svg>
+			<span class="down"> &#128899; </span>
 		</div>
 	</div>
 </div>
@@ -61,7 +57,9 @@ window.customElements.define(
 			this.$links = this._shadowRoot.querySelectorAll("link-ʤ");
 			this.$beurs = this._shadowRoot.querySelector("beurs-ʤ");
 			this.$main = this._shadowRoot.querySelector("#main-unl");
+			this.$back = this._shadowRoot.querySelector(".backBtns");
 			this.socket = new WebSocket("ws://essadji.be:2105");
+
 			this.addEventListener("move", (e) => {
 				this.socket.send(
 					JSON.stringify({
@@ -101,11 +99,12 @@ window.customElements.define(
 						this.$beurs.style.display = "none";
 						this.$main.style.display = "block";
 					});
-
-					// this.setMedia(code)
 				});
 			});
 
+			this.$back.addEventListener("click", () => {
+				window.location.href = "http://localhost:2105/welcome";
+			});
 			this.socket.addEventListener("open", (event) => {
 				// console.log("opening socket for controller ...")
 				this.socket.send(

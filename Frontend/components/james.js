@@ -9,16 +9,17 @@ import "./interface.js";
 //#region TEMPLATE
 const james_template = document.createElement("template");
 james_template.innerHTML = /* html */ `
+<link href="../Components/style.css" rel="stylesheet" type="text/css">  
 <style>
   :host {
     background: white;
   }
 </style>
-
-<student-login-ɮ ></student-login-ɮ>
- <startscreen-ɮ></startscreen-ɮ> 
- <face-ʤ hidden></face-ʤ> 
-<interface-ʤ hidden></interface-ʤ>
+	<span class="backBtns">&#129144;</span>
+	<student-login-ɮ ></student-login-ɮ>
+	<startscreen-ɮ></startscreen-ɮ> 
+	<face-ʤ hidden></face-ʤ> 
+	<interface-ʤ hidden></interface-ʤ>
 `;
 //#endregion TEMPLATE
 
@@ -44,6 +45,7 @@ window.customElements.define(
 				this.$interface.hidden = false;
 			});
 			this.socket = new WebSocket("ws://essadji.be:2105");
+			this.$back = this._shadowRoot.querySelector(".backBtns");
 		}
 
 		connectedCallback() {
@@ -73,6 +75,10 @@ window.customElements.define(
 			//     });
 			//   if (this.$face.hidden) { this.$face.hidden = false; this.$interface.hidden = true; this.$fullscreen.hidden = true; }
 			// });
+			this.$back.addEventListener("click", () => {
+				window.location.href = "http://localhost:2105/welcome";
+			});
+
 			this.socket.addEventListener("open", (event) => {
 				console.log("opening socket for James ...");
 				this.socket.send(

@@ -10,8 +10,11 @@ template.innerHTML = /*HTML*/ `
         <face-ʤ class="eyes"></face-ʤ>
     </div>
     <div id="greetingsContainer">
-        <h1 id="greeting">Hi! I'm James, welcome to UCLL!</h1>
-        <h2 id="underGreeting">&#9758; Touch the screen to contiunue &#9756;</h2>
+        <h1 id="greeting">Hi, I am James. How can I be of service?</h1>
+		<div id="redirectBtns"> 
+			<button id="projects"><span class="arrows">&#9656;</span>Projects and Events</button>
+			<button id="guides"><span class="arrows">&#9656;</span> Guided Tours</button>
+		</div>
     </div>
 </div> 
 `;
@@ -24,22 +27,20 @@ window.customElements.define(
 			super();
 			this._shadowroot = this.attachShadow({mode: "open"});
 			this._shadowroot.appendChild(template.content.cloneNode(true));
-			this.$face = this._shadowroot.querySelector("face-ʤ");
-			this.$mainwel = this._shadowroot.querySelector("#main");
-			this.$greetingsContainer =
-				this._shadowroot.getElementById("greetingsContainer");
-			this.$greeting = this._shadowroot.getElementById("greeting");
-			this.$underGreeting =
-				this._shadowroot.getElementById("underGreeting");
+			this.$mainwel = this._shadowroot.getElementById("main");
+			this.$projects = this._shadowroot.getElementById("projects");
+			this.$guides = this._shadowroot.getElementById("guides");
 		}
 
 		connectedCallback() {
 			this.$mainwel.addEventListener("click", () => {
-				if (!document.fullscreenElement) {
-					this.requestFullscreen();
-				} else {
-					window.location.href = "http://localhost:2105/beurs";
-				}
+				this.requestFullscreen();
+			});
+			this.$projects.addEventListener("click", () => {
+				window.location.href = "http://localhost:2105/beurs";
+			});
+			this.$guides.addEventListener("click", () => {
+				window.location.href = "http://localhost:2105/james";
 			});
 		}
 	}
