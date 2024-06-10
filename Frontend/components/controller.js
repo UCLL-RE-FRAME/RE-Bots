@@ -22,7 +22,7 @@ const html = `
 			<!-- <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ> -->
 		</div>
 	</div>
-	<button id="pref"><a href="#">Preferences</a></button>
+	<button id="pref">Preferences</button>
     
 <!-- Grid Column 2--> 
     <div class="move">
@@ -103,6 +103,7 @@ window.customElements.define(
 			this._shadowroot.appendChild(style);
 
 			this.socket = new WebSocket(`ws://localhost:2105`);
+			this.$pref = this._shadowroot.querySelector("#pref");
 		}
 
 		connectedCallback() {
@@ -194,6 +195,10 @@ window.customElements.define(
 					this.socket.send(JSON.stringify(message));
 				});
 				// ---------------------------------------------
+			});
+
+			this.$pref.addEventListener("click", () => {
+				window.location.href = "http://localhost:2105/ui";
 			});
 		}
 

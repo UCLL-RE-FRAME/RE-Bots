@@ -2,7 +2,7 @@
 //#endregion IMPORTS
 
 //#region TEMPLATE
-const modal_template = document.createElement('template');
+const modal_template = document.createElement("template");
 modal_template.innerHTML = /* html */ `
 <style>
     /* Modal Header */
@@ -29,7 +29,7 @@ modal_template.innerHTML = /* html */ `
         background-color: rgba(255,255,255,0.75);
         opacity:1;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-        border-radius: 25px 25px 0 0;
+        border-radius: 25px;
         animation-name: animatetop;
         animation-duration: 0.4s;
     }
@@ -56,13 +56,18 @@ modal_template.innerHTML = /* html */ `
 //#endregion TEMPLATE
 
 //#region CLASS
-window.customElements.define('modal-ɮ', class extends HTMLElement {
-    constructor() {
-        super();
-        this._shadowRoot = this.attachShadow({ 'mode': 'open' });
-        this._shadowRoot.appendChild(modal_template.content.cloneNode(true));
-        this.$modal = this._shadowRoot.querySelector('#myModal');
-        this.$span = this._shadowRoot.querySelector('.close');
-    }
-});
-  //#endregion CLASS
+window.customElements.define(
+	"modal-ɮ",
+	class extends HTMLElement {
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(
+				modal_template.content.cloneNode(true)
+			);
+			this.$modal = this._shadowRoot.querySelector("#myModal");
+			this.$span = this._shadowRoot.querySelector(".close");
+		}
+	}
+);
+//#endregion CLASS

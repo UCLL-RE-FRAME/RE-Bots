@@ -8,35 +8,34 @@ emotion_control_template.innerHTML = /* html */ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 
 <div class="pageSelector">
-    <!--<button id="btnClients">ENUMERATE CLIENTS</button>-->
-    <div id="loginForm" class="gridItem">
-        <button id="btnLogin">Login</button>
-        <input type="text" id="user" placeholder="Name"/>
-        <input type="text" id="program" placeholder="Programm"/>
-    </div>
-    <button id="btnNodal" class="gridItem">Close Modals</button>
-    <button id="btnEyes" class="gridItem">Eyes</button>
-
-    <div id="slideshow" class="gridItem">
-        <button id="btnBack">&#129080</button>
-        <button id="btnShow">Slideshow</button>
-        <button id="btnFwd">&#129082</button>
-    </div>
-
+    <button id="maincontrol" class="gridItem">Control Center</button>
     <button id="btnInterface" class="gridItem">Show Interface</button>
     <button id="btnFace" class="gridItem">Show James</button>
+
     <select id="dropDown" class="gridItem">
         <option value="../images/toren.jpg">Toren</option>
         <option value="../images/panorama.png" selected>Panorama</option>
     </select>
-
+	<div id="loginForm" class="gridItem">
+        <button id="btnLogin">Login</button>
+        <input type="text" id="user" placeholder="    Naam"/>
+        <input type="text" id="program" placeholder="    Opleiding"/>
+    </div>
 	<div id="ipForm" class="girdItem">
 		<button type="button" id="setIpBtn">Set IP</button>
 		<input type="text" id="ipAddress" name="ip" placeholder="Change IP-address"/>
 	</div>
 </div>
-<toggle-ɠ></toggle-ɠ>
-
+	<!-- Non working buttons provided with the project origninally.
+	<button id="btnClients">ENUMERATE CLIENTS</button>
+    <button id="btnNodal" class="gridItem">Close Modals</button>
+    <button id="btnEyes" class="gridItem">Eyes</button>
+    <div id="slideshow" class="gridItem">
+        <button id="btnBack">&#129080</button>
+        <button id="btnShow">Slideshow</button>
+        <button id="btnFwd">&#129082</button>
+    </div>
+	-->
 `;
 //#endregion TEMPLATE
 
@@ -55,15 +54,17 @@ window.customElements.define(
 			this.$select = this._shadowRoot.querySelector("select");
 			this.$ipInput = this._shadowRoot.getElementById("ipAddress");
 			this.$setIpBtn = this._shadowRoot.getElementById("setIpBtn");
+			this.$control = this._shadowRoot.getElementById("maincontrol");
 		}
 
 		connectedCallback() {
 			this.$select.addEventListener("change", this.backer.bind(this));
+
 			this.$test.forEach((x) => {
 				x.addEventListener("click", this.handler.bind(this));
 			});
 
-			//IP Setter code --> to review
+			//IP Setter --> to review
 			this.$setIpBtn.addEventListener("click", () => {
 				this.socket.send(
 					JSON.stringify({payload: this.$ipInput.value})
@@ -81,6 +82,9 @@ window.customElements.define(
 				);
 			});
 
+			this.$control.addEventListener("click", () => {
+				window.location.href = "http://localhost:2105/advanced";
+			});
 			// this.socket.addEventListener("message", function (event) {
 			// 	console.log("Message from server ", event.data);
 			// });

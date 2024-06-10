@@ -42,42 +42,42 @@ wss.on("connection", function connection(ws) {
 					)
 				);
 				break;
-			case "btnShow":
-				wss.clients.forEach((c) =>
-					c.send(
-						JSON.stringify({
-							payload: "slide",
-						})
-					)
-				);
-				break;
-			case "btnEyes":
-				wss.clients.forEach((c) =>
-					c.send(
-						JSON.stringify({
-							payload: "eyes",
-						})
-					)
-				);
-				break;
-			case "btnFwd":
-				wss.clients.forEach((c) =>
-					c.send(
-						JSON.stringify({
-							payload: "forward",
-						})
-					)
-				);
-				break;
-			case "btnBack":
-				wss.clients.forEach((c) =>
-					c.send(
-						JSON.stringify({
-							payload: "back",
-						})
-					)
-				);
-				break;
+			// case "btnShow":
+			// 	wss.clients.forEach((c) =>
+			// 		c.send(
+			// 			JSON.stringify({
+			// 				payload: "slide",
+			// 			})
+			// 		)
+			// 	);
+			// 	break;
+			// case "btnEyes":
+			// 	wss.clients.forEach((c) =>
+			// 		c.send(
+			// 			JSON.stringify({
+			// 				payload: "eyes",
+			// 			})
+			// 		)
+			// 	);
+			// 	break;
+			// case "btnFwd":
+			// 	wss.clients.forEach((c) =>
+			// 		c.send(
+			// 			JSON.stringify({
+			// 				payload: "forward",
+			// 			})
+			// 		)
+			// 	);
+			// 	break;
+			// case "btnBack":
+			// 	wss.clients.forEach((c) =>
+			// 		c.send(
+			// 			JSON.stringify({
+			// 				payload: "back",
+			// 			})
+			// 		)
+			// 	);
+			// 	break;
 			case "btnInterface":
 				wss.clients.forEach((c) =>
 					c.send(
