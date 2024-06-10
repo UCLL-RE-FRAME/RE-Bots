@@ -38,6 +38,9 @@ body {
 #main-unl {
 	display: grid;
 	grid-template-rows: 3fr 1fr;
+	grid-template-rows: 1fr;
+	background-color: #eee;
+	height: 100%;
 }
 #face {
 	grid-row: 1;
@@ -47,22 +50,25 @@ body {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	place-items: center;
-	gap: 30px;
-
-	margin: auto;
 	overflow-y: auto;
+	grid-row: 1;
 
-	height: 10.8em;
+	height: 11em;
 	width: 90vw;
 	margin-top: -3.5em;
+	scrollbar-width: none;
 	scrollbar-color: #e00049 #9fdaf9;
-	grid-row: 1;
+
+	border-radius: 25px;
+	background-color: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .F {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 	height: 10em;
 	width: 10em;
 }
-
 .scroll {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
@@ -70,16 +76,55 @@ body {
 	margin: auto;
 	place-items: center;
 	color: #e00049;
-	margin-top: -1em;
+	margin-top: -1.5em;
 }
 .notice {
 	font-size: 15pt;
 	font-family: "Open Sans", sans-serif;
 }
-.down {
-	margin-top: -2em;
+.arrow {
 	color: #e00049;
-	font-size: 3em;
+	font-size: 4em;
+	animation: wiggle 0.5s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+	0% {
+		transform: translateY(0);
+	}
+	10% {
+		transform: translateY(1px);
+	}
+	20% {
+		transform: translateY(2px);
+	}
+	30% {
+		transform: translateY(3px);
+	}
+	40% {
+		transform: translateY(4px);
+	}
+	50% {
+		transform: translateY(5px);
+	}
+	60% {
+		transform: translateY(6px);
+	}
+	70% {
+		transform: translateY(5px);
+	}
+	80% {
+		transform: translateY(4px);
+	}
+	90% {
+		transform: translateY(3px);
+	}
+	95% {
+		transform: translateY(2px);
+	}
+	100% {
+		transform: translateY(1px);
+	}
 }
 
 #secondRow {
@@ -95,7 +140,6 @@ body {
 	cursor: pointer;
 	color: #e00049;
 }
-
 /******************************************************************************
 ********************************PAGESELECTOR CSS*******************************
 ******************************************************************************/
@@ -170,6 +214,14 @@ button {
 }
 #ipForm > input {
 	border-radius: 8px;
+}
+
+select {
+	color: #fff;
+	font-weight: 600;
+	border: none;
+	border-radius: 8px;
+	background-color: #002757;
 }
 
 /******************************************************************************
@@ -313,7 +365,7 @@ face-ʤ {
 	grid-template-columns: 1fr;
 	grid-template-rows: 4fr 1fr;
 
-	background-color: #9fdaf9;
+	background-color: #eee;
 	width: 100vw;
 	height: 100vh;
 }
@@ -325,55 +377,59 @@ face-ʤ {
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 1fr;
 	place-items: center;
-	margin-top: -5em;
-	color: #e00049;
+
+	width: 90vw;
+	height: 11em;
+	margin: auto;
+	margin-top: -8em;
+	color: #002757;
+	border-radius: 25px;
+	background-color: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #greeting {
 	font-size: 3.5em;
 }
-#underGreeting {
-	grid-column: 1;
-	grid-row: 2;
-	margin-top: -3em;
-	font-size: 2em;
-}
-
 #redirectBtns {
 	display: grid;
+
 	grid-template-columns: 1fr 1fr;
 	gap: 1em;
+	margin-top: -2em;
 	margin-bottom: 1em;
 }
 
 #projects {
-	display: flex;
 	grid-column: 1;
-	font-size: 1.6em;
-	height: 1.5em;
+	height: 2em;
 	width: 12em;
+
+	font-size: 1.4em;
+	text-align: left;
+	background-color: #e00049;
 }
 
 #guides {
-	display: flex;
 	grid-column: 2;
-	font-size: 1.6em;
-	height: 1.5em;
+	height: 2em;
 	width: 12em;
+
+	font-size: 1.4em;
+	text-align: left;
+	background-color: #e00049;
 }
 #projects .arrows {
-	align-self: flex-start;
-	margin-right: 5%;
-	color: #e00049;
+	color: #002757;
+	padding-right: 0.5em;
 }
 
 #guides .arrows {
-	align-self: flex-start;
-	margin-right: 18%;
-	color: #e00049;
+	color: #002757;
+	padding-right: 0.2em;
 }
 
 /******************************************************************************
-*********************************TOGGLE CSS*********************************
+*********************************TOGGLE CSS************************************
 ******************************************************************************/
 .switch {
 	position: relative;

@@ -37,8 +37,7 @@ template.innerHTML = /*html*/ `
 			<link-ʤ class="F" thumb="18" format="png"></link-ʤ>
 		</div>
 		<div class="scroll">
-			<p class="notice">scroll for more of our projects and events...</p>
-			<span class="down"> &#128899; </span>
+				<span class="arrow">&#128899;</span>
 		</div>
 	</div>
 </div>

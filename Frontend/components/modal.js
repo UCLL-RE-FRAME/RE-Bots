@@ -5,7 +5,6 @@
 const modal_template = document.createElement("template");
 modal_template.innerHTML = /* html */ `
 <style>
-    /* Modal Header */
     p {
         font-size: 36pt;
         font-family: 'Open Sans', sans-serif;
@@ -18,14 +17,11 @@ modal_template.innerHTML = /* html */ `
         border-radius: 25px 25px 0 0;
     }
     
-    /* Modal Body */
     .modal-body {
         padding: 2px 10px;
     }
-    
-    /* Modal Content */
     .modal-content {
-        height: 20%;
+        height: 25%;
         background-color: rgba(255,255,255,0.75);
         opacity:1;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
