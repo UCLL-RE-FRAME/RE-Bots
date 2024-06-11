@@ -8,7 +8,8 @@ emotion_control_template.innerHTML = /* html */ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 
 <div class="pageSelector">
-    <button id="maincontrol" class="gridItem">Control Center</button>
+	<img src="" alt="">
+	<button id="maincontrol" class="gridItem">Control Center</button>
     <button id="btnInterface" class="gridItem">Show Interface</button>
     <button id="btnFace" class="gridItem">Show James</button>
 
