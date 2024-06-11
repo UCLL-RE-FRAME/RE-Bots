@@ -8,7 +8,6 @@ emotion_control_template.innerHTML = /* html */ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 
 <div class="pageSelector">
-	<img src="" alt="">
 	<button id="maincontrol" class="gridItem">Control Center</button>
     <button id="btnInterface" class="gridItem">Show Interface</button>
     <button id="btnFace" class="gridItem">Show James</button>
@@ -23,7 +22,7 @@ emotion_control_template.innerHTML = /* html */ `
         <input type="text" id="user" placeholder="    Naam"/>
         <input type="text" id="program" placeholder="    Opleiding"/>
     </div>
-	<div id="ipForm" class="girdItem">
+	<div id="ipForm" class="gridItem">
 		<button type="button" id="setIpBtn">Set IP</button>
 		<input type="text" id="ipAddress" name="ip" placeholder="Change IP-address"/>
 	</div>
