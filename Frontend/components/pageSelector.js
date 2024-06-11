@@ -16,6 +16,7 @@ emotion_control_template.innerHTML = /* html */ `
         <option value="../images/toren.jpg">Toren</option>
         <option value="../images/panorama.png" selected>Panorama</option>
     </select>
+	
 	<div id="loginForm" class="gridItem">
         <button id="btnLogin">Login</button>
         <input type="text" id="user" placeholder="    Naam"/>

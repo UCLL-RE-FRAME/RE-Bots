@@ -23,7 +23,7 @@ pageSelector_template.innerHTML = /* html */ `
 	border-radius: 8px;
 
 	height: 90%;
-	width: 301px;
+	width: 100%;
 	padding-left: 2em;
 	padding-top: 0.5em;
 }
@@ -36,10 +36,13 @@ pageSelector_template.innerHTML = /* html */ `
     <div class="sliderPanel">
         <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ>
     </div>
-    <emotion-control-ɮ id="eye_L"></emotion-control-ɮ>
-    <emotion-control-ɮ id="eye_R"></emotion-control-ɮ>
+	<div class="emo-joystick">
+    	<emotion-control-ɮ id="eye_L"></emotion-control-ɮ>
+	</div>
+	<div class="emo-joystick">
+    	<emotion-control-ɮ id="eye_R"></emotion-control-ɮ>
+	</div>
     <face-ʤ></face-ʤ>
-
     <!--
 	<james-ɮ></janmes-ɮ>
     <emotion-control-ɮ id="pupil_L"></emotion-control-ɮ>

@@ -88,10 +88,6 @@ window.customElements.define(
               background-color: #002757;
               box-shadow: 0px 5px 0px 0px #002777;
             }
-            
-            .blue:hover {
-              background-color: #002777;
-            }
   `;
 
 			this._shadowroot = this.attachShadow({mode: "open"});
