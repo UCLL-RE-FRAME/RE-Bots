@@ -6,7 +6,7 @@ const template = document.createElement("template");
 template.innerHTML = /*HTML*/ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 <div id="main">
-	<img id="welcomeLogo" class="dsLogo"src="../images/DiSo.svg" alt="digitalsolutions logo"/>
+	<img id="welcomeLogo" class="dsLogo"src="../images/DiSo.svg" alt="digital solutions logo"/>
     <div id="face-wel" >
         <face-ʤ class="eyes"></face-ʤ>
     </div>
@@ -22,7 +22,7 @@ template.innerHTML = /*HTML*/ `
 //endregion TEMPLATE
 //region CLASS
 window.customElements.define(
-	"welcome-ʤ",
+	"welcome-ɠ",
 	class extends HTMLElement {
 		constructor() {
 			super();
