@@ -9,7 +9,7 @@ import "./slider.js";
 //#region TEMPLATE
 
 const pageSelector_template = document.createElement("template");
-pageSelector_template.innerHTML = /* html */ `
+pageSelector_template.innerHTML = /*HTML*/ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css"> 
 <style>
 :host {

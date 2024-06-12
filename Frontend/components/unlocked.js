@@ -10,7 +10,8 @@ let template = document.createElement("template");
 template.innerHTML = /*html*/ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 <div id="main-unl">
-	<span class="backBtns">&#129144;</span>
+	<img class="dsLogo"src="../images/DiSo.svg" alt="digitalsolutions logo"/>
+	<img class="backBtns" src="../images/backBtn.svg" alt="back button"/>
     <div id="face">
         <face-ʤ class="eyes"></face-ʤ>
     </div>

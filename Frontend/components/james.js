@@ -15,7 +15,9 @@ james_template.innerHTML = /* html */ `
     background: white;
   }
 </style>
-	<span class="backBtns">&#129144;</span>
+	<img class="dsLogo" src="../images/DiSo.svg" alt="digitalsolutions logo"/>
+	<img class="backBtns" src="../images/backBtn.svg" alt="back button"/>
+
 	<student-login-ɮ ></student-login-ɮ>
 	<startscreen-ɮ></startscreen-ɮ> 
 	<face-ʤ hidden></face-ʤ> 

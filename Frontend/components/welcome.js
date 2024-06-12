@@ -6,7 +6,8 @@ const template = document.createElement("template");
 template.innerHTML = /*HTML*/ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 <div id="main">
-    <div id="face-wel" > 
+	<img id="welcomeLogo" class="dsLogo"src="../images/DiSo.svg" alt="digitalsolutions logo"/>
+    <div id="face-wel" >
         <face-ʤ class="eyes"></face-ʤ>
     </div>
     <div id="greetingsContainer">
