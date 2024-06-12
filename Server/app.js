@@ -15,7 +15,7 @@ APP.use("/ui", express.static("./Interfaces/UI"));
 APP.use("/advanced", express.static("./Interfaces/VIEW"));
 APP.use("/eudres", express.static("./Interfaces/EUDRES"));
 APP.use("/beurs", express.static("./Interfaces/UNLOCKED"));
-APP.use("/welcome", express.static("./interfaces/STARTPAGE"));
+APP.use("/welcome", express.static("./interfaces/WELCOME"));
 // PARTS
 APP.use("/components", express.static("../Frontend/components"));
 APP.use("/data", express.static("./data"));
@@ -31,16 +31,6 @@ APP.get("/", (req, res) => {
 	);
 	// fs.createReadStream('./index.html').pipe(res);
 });
-
-APP.use(
-	express.static("public", {
-		setHeaders: (res, path) => {
-			if (path.endsWith(".js")) {
-				res.setHeader("Content-Type", "application/javascript");
-			}
-		},
-	})
-);
 
 APP.post("/", express.json(), (req, res) => {
 	// let message = req.body.message;

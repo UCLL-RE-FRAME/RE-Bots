@@ -1,15 +1,8 @@
 FROM node:lts
 
-WORKDIR /Server
-
-COPY package*.json ./
-
-RUN npm install
-
+WORKDIR /app
 COPY ./ ./
 
-ENV PORT=2105
-
-EXPOSE 2105
-
-CMD ["node" , "server.js" ]
+WORKDIR /app/Server
+RUN npm i
+ENTRYPOINT [ "node", "server.js" ]
