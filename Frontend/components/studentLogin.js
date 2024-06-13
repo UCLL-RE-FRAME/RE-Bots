@@ -2,7 +2,7 @@
 //#endregion IMPORTS
 
 //#region TEMPLATE
-const student_login_template = document.createElement('template');
+const student_login_template = document.createElement("template");
 student_login_template.innerHTML = /* html */ `
 <style>
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
@@ -59,25 +59,32 @@ student_login_template.innerHTML = /* html */ `
 //#endregion TEMPLATE
 
 //#region CLASS
-window.customElements.define('student-login-ɮ', class extends HTMLElement {
-    constructor() {
-        super();
-        this._shadowRoot = this.attachShadow({ 'mode': 'open' });
-        this._shadowRoot.appendChild(student_login_template.content.cloneNode(true));
-        this.$content = this._shadowRoot.querySelector('#content');
-
-    }
-setUser(name,programme){
-  console.log("set called")
-  this._shadowRoot.querySelector("h1").innerHTML=name?`HALLO,&nbsp;${name}`:`Hallo!`;
-  this._shadowRoot.querySelector("h4").innerHTML =programme?`Opleiding: ${programme}`:``;
-}
-    set content(x) {
-        this.$content.innerHTML = x;
-    }
-  setBackground(url) {
-    this.$content.style.backgroundImage = `url(${url})`;
-  }
-
-});
-  //#endregion CLASS
+window.customElements.define(
+	"student-login-ɮ",
+	class extends HTMLElement {
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(
+				student_login_template.content.cloneNode(true)
+			);
+			this.$content = this._shadowRoot.querySelector("#content");
+		}
+		setUser(name, programme) {
+			console.log("set called");
+			this._shadowRoot.querySelector("h1").innerHTML = name
+				? `HALLO,&nbsp;${name}`
+				: `Hallo!`;
+			this._shadowRoot.querySelector("h4").innerHTML = programme
+				? `Opleiding: ${programme}`
+				: ``;
+		}
+		set content(x) {
+			this.$content.innerHTML = x;
+		}
+		setBackground(url) {
+			this.$content.style.backgroundImage = `url(${url})`;
+		}
+	}
+);
+//#endregion CLASS

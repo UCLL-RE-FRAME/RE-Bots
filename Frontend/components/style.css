@@ -29,7 +29,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-size: 40pt;
-	font-family: "Lobster";
 }
 .dsLogo {
 	position: absolute;
@@ -87,7 +86,6 @@ body {
 }
 .notice {
 	font-size: 15pt;
-	font-family: "Open Sans", sans-serif;
 }
 .arrow {
 	color: #e00049;
@@ -405,6 +403,35 @@ face-ʤ {
 #greeting {
 	font-size: 3.5em;
 }
+/*Welcome page typewriter effecct*/
+.greeting #greeting {
+	overflow: hidden;
+	border-right: 0.07em solid #002757;
+	white-space: nowrap;
+	margin: 0 auto;
+	letter-spacing: 0.04em;
+	animation: typing 3.5s steps(40, end), blink-caret 0.9s step-end infinite;
+}
+/*Typewriter effect*/
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+/*Cursor effect*/
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #002757;
+	}
+}
+
 #redirectBtns {
 	display: grid;
 
