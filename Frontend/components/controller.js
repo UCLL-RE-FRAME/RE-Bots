@@ -1,3 +1,4 @@
+//region IMPORTS
 import "./joystick.js";
 import "./tts.js";
 import "./quote.js";
@@ -5,85 +6,76 @@ import "./soundboard.js";
 import "./json.js";
 import "./mapview.js";
 import "./slider.js";
+//endrgion IMPORTS
 
+//region GLOBAL VARIABLES
 const height = 75;
 const width = 75;
 const boxSize = 80;
+//endregion GLOBAL VARIABLES
 
-const html = `
-<link href="../Components/style.css" rel="stylesheet" type="text/css">   
-<!-- Grid Column 1-->
-    <div class="quote">
-        <quote-Ƅ id="quote"></quote-Ƅ>
-    </div>
+//region TEMPLATE
+const template = document.createElement("template");
+template.innerHTML = /* HTML */ `
+	<link href="../Components/style.css" rel="stylesheet" type="text/css" />
+	<style>
+		:host {
+			background-color: #ecf0f3;
+			box-sizing: border-box;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(5, 1fr);
+			place-items: center;
+			height: 100%;
+			width: 99vw;
+		}
+		.sliderPanel {
+			box-sizing: border-box;
+			position: absolute;
+			aspect-ratio: 1/1;
+			background: #ecf0f3;
+			box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+			border-radius: 20px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			height: 110px;
+			width: 80%;
+			/* height: ${boxSize}%; */
+			padding-left: 10%;
+			padding-top: 2%;
+		}
+	</style>
+
+	<!-- Grid Column 1-->
+	<div class="quote">
+		<quote-Ƅ id="quote"></quote-Ƅ>
+	</div>
 	<div class="velocity">
 		<div class="sliderPanel">
 			<slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
-			<!-- <slider-Ƅ id="speed" min="0" max="200" start="100"></slider-Ƅ> -->
 		</div>
 	</div>
-	<button id="pref">Preferences</button>
-    
-<!-- Grid Column 2--> 
-    <div class="move">
-        <joystick-Ƅ id="movement2d"></joystick-Ƅ>
-    </div>
+
+	<!-- Grid Column 2-->
+	<div class="move">
+		<joystick-Ƅ id="movement2d"></joystick-Ƅ>
+	</div>
 	<div class="speech">
-        <tts-Ƅ id="tts"></tts-Ƅ>
-    </div>
+		<tts-Ƅ id="tts"></tts-Ƅ>
+	</div>
 
-<!-- Grid Coliumn 3-->
-    <div class="sound">
-        <soundboard-Ƅ id="sounds"></soundboard-Ƅ>
-    </div>
-
-    <!--
-    <div class="map">
-        <map-Ƅ id="map"></map-Ƅ>
-    </div>
-
-    <div class="echo">
-        <json-Ƅ id="json"></json-Ƅ>
-    </div>
-    	-->
+	<!-- Grid Coliumn 3-->
+	<div class="sound">
+		<soundboard-Ƅ id="sounds"></soundboard-Ƅ>
+	</div>
+	<div class="pref-nav">
+		<button id="pref">Preferences</button>
+	</div>
 `;
+//endregion TEMPLATE
 
-const style = document.createElement("style");
-style.textContent = `
-    :host {
-        background-color: #ecf0f3;
-        box-sizing: border-box;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4,1fr);
-        place-items: center;
-        height: 89vh;
-        width: 99vw;
-
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-	.sliderPanel {
-		box-sizing: border-box;
-		position: absolute;
-		aspect-ratio: 1/1;
-		background: #ecf0f3;
-		box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-		border-radius: 20px;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		height: 80%;
-		width: 80%;
-		/* height: ${boxSize}%; */
-		padding-left: 10%;
-		padding-top: 2%;
-	}
-`;
-
-// Make a variable to hold data for every inputsensor
+//region CLASS
 let movement2d = {x: 0, y: 0};
 let tts = {message: ""};
 let force = {value: 0};
@@ -91,17 +83,14 @@ let speed = {value: 0};
 let sounds = {link: ""};
 let mapRequest = {key: "map"};
 let enableScanning = {mappingConfigurable: true, mappingEnabled: true};
-// ----------------------------------------------
 
 window.customElements.define(
-	"controller-Ƅ",
+	"controller-ɠ",
 	class extends HTMLElement {
 		constructor() {
 			super();
 			this._shadowroot = this.attachShadow({mode: "open"});
-			this._shadowroot.innerHTML = html;
-			this._shadowroot.appendChild(style);
-			this._shadowRoot.appendChild(template.content.cloneNode(true));
+			this._shadowroot.appendChild(template.content.cloneNode(true));
 
 			this.socket = new WebSocket(`ws://localhost:2105`);
 			this.$pref = this._shadowroot.querySelector("#pref");
@@ -133,12 +122,10 @@ window.customElements.define(
 					movement2d.x = e.detail.x;
 					movement2d.y = e.detail.y;
 				});
-				// ---------------------------------------------
 
 				// logPeriodicalInput is used to periodically send the global variable ( logInput(this.socket, <source(id of component)>, <data>, <period(ms)>); )
 				// Do this for the continuous inputsensors
 				logPeriodicalInput(this.socket, "movement2d", movement2d, 300);
-				// --------------------------------------------
 
 				// Add event listeners for every single fire inputsensor
 				this.addEventListener("tts", (e) => {
@@ -227,3 +214,4 @@ const logPeriodicalInput = (socket, source, data, interval) => {
 		);
 	}, interval);
 };
+//endregion CLASS

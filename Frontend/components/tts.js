@@ -29,7 +29,7 @@ window.customElements.define(
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                height: 85%;
+                height: 110px;
 				width:80%;
 				background: #ecf0f3;
   				box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
@@ -48,7 +48,7 @@ window.customElements.define(
 				margin-top:10px;
 				background: #ecf0f3;
 				padding-left: 30%;
-				height: 3em;
+				height: 2em;
 				font-size: 12px;
 				border-radius: 50px;
 				box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
@@ -64,7 +64,7 @@ window.customElements.define(
 			  button {
 				color: white;
 				background: #002757;
-				height: 2em;
+				height: 1.5em;
 				border-radius: 20px;
 				cursor: pointer;
 				font-weight: 900;
