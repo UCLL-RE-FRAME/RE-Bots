@@ -11,7 +11,9 @@ template.innerHTML = /*HTML*/ `
         <face-ʤ class="eyes"></face-ʤ>
     </div>
     <div id="greetingsContainer">
-        <h1 id="greeting">Hi, I am James. How can I be of service?</h1>
+		<div class="greeting">
+			<h1 id="greeting">Hi, I am James. How can I be of service?</h1>
+		</div>
 		<div id="redirectBtns"> 
 			<button id="projects"><span class="arrows">&#9656;</span>Projects and Events</button>
 			<button id="guides"><span class="arrows">&#9656;</span> Guided Tours</button>
