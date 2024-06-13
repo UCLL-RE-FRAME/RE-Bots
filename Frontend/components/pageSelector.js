@@ -8,7 +8,8 @@ emotion_control_template.innerHTML = /* html */ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css">  
 
 <div class="pageSelector">
-	<button id="maincontrol" class="gridItem">Control Center</button>
+<div class="selector-container">
+	<button id="mainControl" class="gridItem">Control Center</button>
     <button id="btnInterface" class="gridItem">Show Interface</button>
     <button id="btnFace" class="gridItem">Show James</button>
 
@@ -24,7 +25,8 @@ emotion_control_template.innerHTML = /* html */ `
     </div>
 	<div id="ipForm" class="gridItem">
 		<button type="button" id="setIpBtn">Set IP</button>
-		<input type="text" id="ipAddress" name="ip" placeholder="Change IP-address"/>
+		<input type="text" id="ipAddress" name="ip" placeholder="    Change IP-address"/>
+	</div>
 	</div>
 </div>
 	<!-- Non working buttons provided with the project origninally.
@@ -55,7 +57,7 @@ window.customElements.define(
 			this.$select = this._shadowRoot.querySelector("select");
 			this.$ipInput = this._shadowRoot.getElementById("ipAddress");
 			this.$setIpBtn = this._shadowRoot.getElementById("setIpBtn");
-			this.$control = this._shadowRoot.getElementById("maincontrol");
+			this.$control = this._shadowRoot.getElementById("mainControl");
 		}
 
 		connectedCallback() {

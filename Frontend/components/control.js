@@ -30,6 +30,7 @@ pageSelector_template.innerHTML = /*HTML*/ `
 </style>
 <div class="grid-container">
     <page-selector-ɮ></page-selector-ɮ>
+
     <div class="sliderPanel">
         <slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
     </div>
@@ -43,11 +44,12 @@ pageSelector_template.innerHTML = /*HTML*/ `
     	<emotion-control-ɮ id="eye_R"></emotion-control-ɮ>
 	</div>
     <face-ʤ></face-ʤ>
-    <!--
+
 	<james-ɮ></janmes-ɮ>
+	<!--
     <emotion-control-ɮ id="pupil_L"></emotion-control-ɮ>
     <emotion-control-ɮ id="pupil_R"></emotion-control-ɮ>
-	-->
+	--.
 </div>
 `;
 //#endregion TEMPLATE

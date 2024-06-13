@@ -10,6 +10,8 @@ face_template.innerHTML = /*html*/ `
         width: 100%;
         margin: auto;
       }
+
+	
 	  .st0{fill:url(#SVGID_1_);}
 	  .st1{fill:url(#SVGID_2_);}
 	  .st2{fill:url(#SVGID_3_);}
@@ -48,7 +50,7 @@ face_template.innerHTML = /*html*/ `
   </style>
 
   <div id="eyes-container">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="450 2550 1300 885" height="375px"><!--  was  1500  -->
+    <svg id="eyez" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="450 2550 1300 885" height="375px"><!--  was  1500  -->
     <!-- style="enable-background:new 0 0 4500 4000;" xml:space="preserve" -->
         <g id="I_L" transform="translate(0,-10)">
             <g id="Ir_L" transform="rotate(-2.5,820,3410)">
