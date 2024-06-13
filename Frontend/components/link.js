@@ -11,9 +11,6 @@ template.innerHTML = /*html*/ `
         height: 10em;
         border-radius: 24px;
     	}
-    /*
-    :host { font-family: sans-serif; }  
-    */
   </style>
   
   <body>

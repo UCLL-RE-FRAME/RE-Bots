@@ -5,14 +5,12 @@
 const student_login_template = document.createElement("template");
 student_login_template.innerHTML = /* html */ `
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
-  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
   * {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     }
   h4{
-    /* font-family: 'Kaushan Script', cursive; */
+
     font-style:italic;
     color: #44474b;
     font-size: 20pt;

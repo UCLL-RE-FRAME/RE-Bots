@@ -15,7 +15,6 @@ template.innerHTML = /*html*/ `
     <div id="face">
         <face-ʤ class="eyes"></face-ʤ>
     </div>
-
 	<div id="secondRow">
 		<div class="content">
 			<link-ʤ class="F" thumb="1" format="jpg"></link-ʤ>

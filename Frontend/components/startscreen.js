@@ -2,17 +2,15 @@
 //#endregion IMPORTS
 
 //#region TEMPLATE
-const startscreen_template = document.createElement('template');
+const startscreen_template = document.createElement("template");
 startscreen_template.innerHTML = /* html */ `
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
-  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
   * {
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     }
   h4{
-    /* font-family: 'Kaushan Script', cursive; */
     font-style:italic;
     color: #44474b;
     font-size: 20pt;
@@ -59,25 +57,26 @@ startscreen_template.innerHTML = /* html */ `
 //#endregion TEMPLATE
 
 //#region CLASS
-window.customElements.define('startscreen-ɮ', class extends HTMLElement {
-  constructor() {
-    super();
-    this._shadowRoot = this.attachShadow({ 'mode': 'open' });
-    this._shadowRoot.appendChild(startscreen_template.content.cloneNode(true));
-    this.$content = this._shadowRoot.querySelector('#content');
-    this.$card = this._shadowRoot.querySelector('#card');
-    this.$card.addEventListener("click", () => {
-
-    });
-
-  }
-  setBackground(url) {
-    this.$content.style.backgroundImage = `url(${url})`;
-  }
-  set content(x) {
-    this.$content.innerHTML = x;
-  }
-
-});
+window.customElements.define(
+	"startscreen-ɮ",
+	class extends HTMLElement {
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(
+				startscreen_template.content.cloneNode(true)
+			);
+			this.$content = this._shadowRoot.querySelector("#content");
+			this.$card = this._shadowRoot.querySelector("#card");
+			this.$card.addEventListener("click", () => {});
+		}
+		setBackground(url) {
+			this.$content.style.backgroundImage = `url(${url})`;
+		}
+		set content(x) {
+			this.$content.innerHTML = x;
+		}
+	}
+);
 
 //#endregion CLASS

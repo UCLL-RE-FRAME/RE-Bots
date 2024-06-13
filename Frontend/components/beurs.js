@@ -6,7 +6,6 @@ template.innerHTML = /*html*/ `
       margin: auto;
       padding-left: 1em;
       height: 100%;
-      font-family: arial;
       max-width: 70vw;
       color: #002757;
      }

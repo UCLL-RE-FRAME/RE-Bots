@@ -28,7 +28,6 @@ template.innerHTML = /* html */ `
       justify-content: center;
       align-items: center;
       font-size: 40pt;
-      font-family: "Lobster";
     }
     .grid-container{
       display: grid;
@@ -106,71 +105,83 @@ template.innerHTML = /* html */ `
 
 //#region CLASS
 window.customElements.define(
-  "eudres-ʤ",
-  class extends HTMLElement {
-    constructor() {
-      super();
-      this._shadowRoot = this.attachShadow({ mode: "open" });
-      this._shadowRoot.appendChild(template.content.cloneNode(true));
-      this.$flags = this._shadowRoot.querySelectorAll('flag-ʤ');
-      this.socket = new WebSocket("ws://essadji.be:2105");
-      this.addEventListener("move", (e) => {
-        this.socket.send(JSON.stringify({ payload: "move", target: e.detail.source, x: e.detail.valueX, y: e.detail.valueY }));
-      });
-      this.$audio = this._shadowRoot.querySelector('audio');
-      this.texts = {
-        "EN": "Hello dear guests",
-        "NL": "Hallo lieve gasten uit België",
-        "HU": "Kedves magyar vendégeink Hungáriából",
-        "LVA": "Esiet sveicināti, mīļie viesi no Latvijas",
-        "DE": "Hallo liebe Gäste aus Österreich",
-        "PT": "Olá queridos convidados de Portugal",
-        "RO": "Bună ziua, dragi oaspeți din România"
-      };
-      this.$welcome = this._shadowRoot.querySelector('.text');
-      this.$eyes = this._shadowRoot.querySelector(".eyes");
-    }
-    setMedia(_) {
-      this.$audio.src = `../media/${_}.mp3`;
-      this.$audio.play();
-      this.$welcome.innerHTML = this.texts[_];
-    }
-    connectedCallback() {
-      this.$flags.forEach((flag) => {
-        flag.addEventListener(('click'), () => {
-          let code = flag.getAttribute('svg');
-          let country = code;
-          // console.log(country);
-          this.setMedia(code)
-        })
-      });
-      this.$welcome.addEventListener('click', () => {
-        this.setMedia('EN');
-      })
-      this.socket.addEventListener("open", (event) => {
-        // console.log("opening socket for controller ...")
-        this.socket.send(JSON.stringify({ payload: "Hello server, I will be your controller today." }));
-      });
-      this.socket.addEventListener("message", (event) => {
-        // console.log('Message from server ', event.data);
-      });
-      this.$eyes.addEventListener('click', () => {
+	"eudres-ʤ",
+	class extends HTMLElement {
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(template.content.cloneNode(true));
+			this.$flags = this._shadowRoot.querySelectorAll("flag-ʤ");
+			this.socket = new WebSocket("ws://essadji.be:2105");
+			this.addEventListener("move", (e) => {
+				this.socket.send(
+					JSON.stringify({
+						payload: "move",
+						target: e.detail.source,
+						x: e.detail.valueX,
+						y: e.detail.valueY,
+					})
+				);
+			});
+			this.$audio = this._shadowRoot.querySelector("audio");
+			this.texts = {
+				EN: "Hello dear guests",
+				NL: "Hallo lieve gasten uit België",
+				HU: "Kedves magyar vendégeink Hungáriából",
+				LVA: "Esiet sveicināti, mīļie viesi no Latvijas",
+				DE: "Hallo liebe Gäste aus Österreich",
+				PT: "Olá queridos convidados de Portugal",
+				RO: "Bună ziua, dragi oaspeți din România",
+			};
+			this.$welcome = this._shadowRoot.querySelector(".text");
+			this.$eyes = this._shadowRoot.querySelector(".eyes");
+		}
+		setMedia(_) {
+			this.$audio.src = `../media/${_}.mp3`;
+			this.$audio.play();
+			this.$welcome.innerHTML = this.texts[_];
+		}
+		connectedCallback() {
+			this.$flags.forEach((flag) => {
+				flag.addEventListener("click", () => {
+					let code = flag.getAttribute("svg");
+					let country = code;
+					// console.log(country);
+					this.setMedia(code);
+				});
+			});
+			this.$welcome.addEventListener("click", () => {
+				this.setMedia("EN");
+			});
+			this.socket.addEventListener("open", (event) => {
+				// console.log("opening socket for controller ...")
+				this.socket.send(
+					JSON.stringify({
+						payload:
+							"Hello server, I will be your controller today.",
+					})
+				);
+			});
+			this.socket.addEventListener("message", (event) => {
+				// console.log('Message from server ', event.data);
+			});
+			this.$eyes.addEventListener("click", () => {
+				if (this.requestFullscreen)
+					this.requestFullscreen().catch((err) => {
+						alert(
+							`Error attempting to enable full-screen mode: ${err.message} (${err.name})`
+						);
+					});
+			});
+		}
 
-        if (this.requestFullscreen)
-          this.requestFullscreen().catch((err) => {
-            alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-          });
-      }
-      )
-    }
+		handler(e) {
+			this.socket.send(JSON.stringify({payload: e.target.id}));
+		}
 
-    handler(e) {
-      this.socket.send(JSON.stringify({ payload: e.target.id }));
-    }
-
-    set content(x) {
-      this.$content.innerHTML = x;
-    }
-  }
+		set content(x) {
+			this.$content.innerHTML = x;
+		}
+	}
 );
 //#endregion CLASS
