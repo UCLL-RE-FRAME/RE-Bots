@@ -47,7 +47,3 @@ window.customElements.define(
 	}
 );
 //endregion CLASS
-
-function sleep(ms) {
-	return new Promise((resolve) => setTimeout(resolve, ms));
-}
