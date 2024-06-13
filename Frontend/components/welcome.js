@@ -1,6 +1,7 @@
 //region IMPORTS
 import "./face.js";
 //endregion IMPORTS
+
 //region TEMPLATE
 const template = document.createElement("template");
 template.innerHTML = /*HTML*/ `
@@ -22,6 +23,7 @@ template.innerHTML = /*HTML*/ `
 </div> 
 `;
 //endregion TEMPLATE
+
 //region CLASS
 window.customElements.define(
 	"welcome-ɠ",
@@ -30,6 +32,7 @@ window.customElements.define(
 			super();
 			this._shadowroot = this.attachShadow({mode: "open"});
 			this._shadowroot.appendChild(template.content.cloneNode(true));
+
 			this.$mainwel = this._shadowroot.getElementById("main");
 			this.$projects = this._shadowroot.getElementById("projects");
 			this.$guides = this._shadowroot.getElementById("guides");

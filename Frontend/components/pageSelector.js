@@ -29,16 +29,6 @@ emotion_control_template.innerHTML = /* html */ `
 	</div>
 	</div>
 </div>
-	<!-- Non working buttons provided with the project origninally.
-	<button id="btnClients">ENUMERATE CLIENTS</button>
-    <button id="btnNodal" class="gridItem">Close Modals</button>
-    <button id="btnEyes" class="gridItem">Eyes</button>
-    <div id="slideshow" class="gridItem">
-        <button id="btnBack">&#129080</button>
-        <button id="btnShow">Slideshow</button>
-        <button id="btnFwd">&#129082</button>
-    </div>
-	-->
 `;
 //#endregion TEMPLATE
 
