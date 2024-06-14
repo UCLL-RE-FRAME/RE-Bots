@@ -35,8 +35,8 @@ body {
 	position: absolute;
 	top: 2px;
 	right: 0;
-	height: 80px;
-	width: 80px;
+	height: 100px;
+	width: 100px;
 }
 
 /******************************************************************************
@@ -63,7 +63,7 @@ body {
 	height: 11em;
 	width: 90vw;
 	margin-top: -3.5em;
-	scrollbar-width: none;
+	scrollbar-width: thin;
 	scrollbar-color: #e00049 #9fdaf9;
 
 	border-radius: 25px;
@@ -77,63 +77,14 @@ body {
 	width: 10em;
 }
 .scroll {
-	display: grid;
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 1fr;
-	margin: auto;
-	place-items: center;
+	position: absolute;
+
+	left: 32%;
 	color: #e00049;
-	margin-top: -1.5em;
 }
 .notice {
 	font-size: 15pt;
 }
-.arrow {
-	color: #e00049;
-	font-size: 4em;
-	margin-top: -0.2em;
-	animation: wiggle 0.8s ease-in-out infinite;
-}
-
-@keyframes wiggle {
-	0% {
-		transform: translateY(0);
-	}
-	10% {
-		transform: translateY(1px);
-	}
-	20% {
-		transform: translateY(2px);
-	}
-	30% {
-		transform: translateY(3px);
-	}
-	40% {
-		transform: translateY(4px);
-	}
-	50% {
-		transform: translateY(5px);
-	}
-	60% {
-		transform: translateY(6px);
-	}
-	70% {
-		transform: translateY(5px);
-	}
-	80% {
-		transform: translateY(4px);
-	}
-	90% {
-		transform: translateY(3px);
-	}
-	95% {
-		transform: translateY(2px);
-	}
-	100% {
-		transform: translateY(1px);
-	}
-}
-
 #secondRow {
 	position: fixed;
 	left: 4.55em;

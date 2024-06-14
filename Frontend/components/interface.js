@@ -101,7 +101,7 @@ interface_template.innerHTML = /* html */ `
       <h4>technologie</h4>
     </div>
     <div class="selected-item-card" id="deselect" hidden>
-      <h1 id="selection"> &#128896; </h1>
+      <h1 id="selection"></h1>
     </div>
   </div>
   <div id="courses-grid" class="grid-item">
@@ -177,8 +177,7 @@ window.customElements.define(
 
 						o.addEventListener("click", (x) => {
 							this.$deselect.hidden = false;
-							this.$selection.innerHTML =
-								"&#128896;" + "\t" + opleiding.toUpperCase();
+							this.$selection.innerHTML = opleiding.toUpperCase();
 							this.$detailSlider.innerHTML = "";
 							this.$coursesGrid.style.display = "none";
 
