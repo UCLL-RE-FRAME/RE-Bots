@@ -1,0 +1,40 @@
+.grid-container {
+	display: grid;
+	justify-content: space-around;
+	grid-auto-columns: minmax(0, 1fr);
+	grid-template-rows: 0.8fr 1fr 3fr;
+	margin: 1em;
+}
+page-selector-ɮ {
+	grid-column: 1/5;
+	grid-row: 1;
+}
+/*  
+camera-ɮ {
+	gird-column: 2/4;
+	grid-row: 2/4;
+}
+ */
+lever-ɮ#eye_L {
+	grid-column: 1;
+	grid-row: 3;
+}
+lever-ɮ#eye_R {
+	grid-column: 3;
+	grid-row: 3;
+}
+.emo-joystick {
+	display: flex;
+	justify-content: space-around;
+}
+face-ʤ {
+	grid-column: 2/4;
+	grid-row: 2/5;
+	height: 120%;
+	margin-top: 2.5em;
+}
+@media only screen and (max-width: 1228px) {
+	lever-ɮ {
+		padding-left: 100px;
+	}
+}

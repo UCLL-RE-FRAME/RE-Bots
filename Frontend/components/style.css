@@ -35,8 +35,8 @@ body {
 	position: absolute;
 	top: 2px;
 	right: 0;
-	height: 60px;
-	width: 60px;
+	height: 80px;
+	width: 80px;
 }
 
 /******************************************************************************
@@ -91,6 +91,7 @@ body {
 .arrow {
 	color: #e00049;
 	font-size: 4em;
+	margin-top: -0.2em;
 	animation: wiggle 0.8s ease-in-out infinite;
 }
 
@@ -149,6 +150,7 @@ body {
 
 	cursor: pointer;
 }
+
 /******************************************************************************
 ********************************PAGESELECTOR CSS*******************************
 ******************************************************************************/
@@ -335,7 +337,7 @@ select {
 	}
 }
 /******************************************************************************
-********************************CONTROL ADV CSS********************************
+********************************CONTROL (ADV) CSS********************************
 ******************************************************************************/
 .quote {
 	position: relative;
@@ -410,6 +412,53 @@ select {
 	box-sizing: border-box;
 	box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
+@media only screen and (max-width: 1185px) {
+	div {
+		font-size: 0.7em;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.move {
+		margin-top: 1em;
+	}
+	.velocity {
+		margin-top: 1.3em;
+	}
+	.tss {
+		margin-top: 1em;
+	}
+	.prev-nav {
+		margin-top: 2em;
+	}
+}
+@media only screen and (min-width: 1500px) {
+	.move {
+		margin-top: 2.8em;
+	}
+	.quote {
+		height: 90%;
+		margin-top: 4em;
+	}
+	.sound {
+		margin-top: 3.8em;
+		height: 420px;
+	}
+	.velocity {
+		margin-top: 1.1em;
+	}
+	.tss {
+		margin-top: 2em;
+	}
+	.prev-nav {
+		margin-top: 3em;
+	}
+}
+@media only screen and (min-width: 1747px) {
+	.move {
+		margin-top: 8em;
+		margin-bottom: 5em;
+	}
+}
 
 /******************************************************************************
 *****************************CONTROL (UI/PREF) CSS*****************************
@@ -443,16 +492,6 @@ lever-ɮ#eye_R {
 	display: flex;
 	justify-content: space-around;
 }
-/*
-lever-ɮ#pupil_L {
-	grid-column: 1/2;
-	grid-row: 4/5;
-}
-lever-ɮ#pupil_R {
-	grid-column: 4/5;
-	grid-row: 4/5;
-}
-*/
 face-ʤ {
 	grid-column: 2/4;
 	grid-row: 2/5;

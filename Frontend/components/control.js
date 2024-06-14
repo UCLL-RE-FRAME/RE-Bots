@@ -12,9 +12,15 @@ const pageSelector_template = document.createElement("template");
 pageSelector_template.innerHTML = /*HTML*/ `
 <link href="../Components/style.css" rel="stylesheet" type="text/css"> 
 <style>
+	html{
+		margin: 0;
+	}
 :host {
     background-color: var(--base);
     overflow-x: hidden;
+	height: 100%;
+	width: 100%;
+	margin: 0;
 }
 .sliderPanel {
 	box-sizing: border-box;

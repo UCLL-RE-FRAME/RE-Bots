@@ -1,0 +1,97 @@
+#main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 4fr 1fr;
+
+	background-color: #eee;
+	width: 100vw;
+	height: 100vh;
+}
+#face-wel {
+	padding-top: 3em;
+}
+#greetingsContainer {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	place-items: center;
+
+	width: 90vw;
+	height: 11em;
+	margin: auto;
+	margin-top: -8em;
+	color: #002757;
+	border-radius: 25px;
+	background-color: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*Welcome page typewriter effecct*/
+.greeting #greeting {
+	overflow: hidden;
+	font-size: 2.5em;
+	border-right: 0.07em solid #002757;
+	white-space: nowrap;
+	margin: 0 auto;
+	letter-spacing: 0.04em;
+	animation: typing 3.5s steps(40, end), blink-caret 0.9s step-end infinite;
+}
+/*Typewriter effect*/
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+/*Cursor effect*/
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #002757;
+	}
+}
+
+#redirectBtns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em;
+	margin-top: -2em;
+	margin-bottom: 1em;
+}
+
+#projects {
+	grid-column: 1;
+	height: 2em;
+	width: 12em;
+
+	font-size: 1.4em;
+	text-align: left;
+	background-color: #e00049;
+}
+
+#guides {
+	grid-column: 2;
+	height: 2em;
+	width: 12em;
+
+	font-size: 1.4em;
+	text-align: left;
+	background-color: #e00049;
+}
+#projects .arrows {
+	color: #002757;
+	padding-right: 0.5em;
+}
+
+#guides .arrows {
+	color: #002757;
+	padding-right: 0.2em;
+}
+#welcomeLogo {
+	top: 2px;
+	left: 0;
+}

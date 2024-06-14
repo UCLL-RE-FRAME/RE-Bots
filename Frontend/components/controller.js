@@ -20,14 +20,14 @@ template.innerHTML = /* HTML */ `
 	<link href="../Components/style.css" rel="stylesheet" type="text/css" />
 	<style>
 		:host {
-			background-color: #ecf0f3;
+			height: 100%;
+			width: 100vw;
 			box-sizing: border-box;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: repeat(5, 1fr);
+			background-color: #ecf0f3;
 			place-items: center;
-			height: 100%;
-			width: 99vw;
 		}
 		.sliderPanel {
 			box-sizing: border-box;
@@ -48,30 +48,33 @@ template.innerHTML = /* HTML */ `
 	</style>
 
 	<!-- Grid Column 1-->
-	<div class="quote">
-		<quote-Ƅ id="quote"></quote-Ƅ>
-	</div>
-	<div class="velocity">
-		<div class="sliderPanel">
-			<slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
+	<body id="control-panel-body">
+		<div class="quote">
+			<quote-Ƅ id="quote"></quote-Ƅ>
 		</div>
-	</div>
+		<div class="velocity">
+			<div class="sliderPanel">
+				<slider-Ƅ id="force" min="0" max="200" start="100"></slider-Ƅ>
+			</div>
+		</div>
 
-	<!-- Grid Column 2-->
-	<div class="move">
-		<joystick-Ƅ id="movement2d"></joystick-Ƅ>
-	</div>
-	<div class="speech">
-		<tts-Ƅ id="tts"></tts-Ƅ>
-	</div>
+		<!-- Grid Column 2-->
+		<div class="move">
+			<joystick-Ƅ id="movement2d"></joystick-Ƅ>
+		</div>
+		<div class="speech">
+			<tts-Ƅ id="tts"></tts-Ƅ>
+		</div>
 
-	<!-- Grid Coliumn 3-->
-	<div class="sound">
-		<soundboard-Ƅ id="sounds"></soundboard-Ƅ>
-	</div>
-	<div class="pref-nav">
-		<button id="pref">Preferences</button>
-	</div>
+		<!-- Grid Coliumn 3-->
+		<div class="sound">
+			<soundboard-Ƅ id="sounds"></soundboard-Ƅ>
+		</div>
+		<div class="pref-nav">
+			<button id="pref">Preferences</button>
+		</div>
+		<body></body>
+	</body>
 `;
 //endregion TEMPLATE
 
