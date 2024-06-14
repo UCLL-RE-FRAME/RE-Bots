@@ -76,7 +76,7 @@ window.customElements.define(
 			});
 
 			this.$control.addEventListener("click", () => {
-				window.location.href = "http://localhost:2105/advanced";
+				window.location.href = "http://10.25.244.14:2105/advanced";
 			});
 			// this.socket.addEventListener("message", function (event) {
 			// 	console.log("Message from server ", event.data);

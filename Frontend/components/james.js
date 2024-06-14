@@ -78,7 +78,7 @@ window.customElements.define(
 			//   if (this.$face.hidden) { this.$face.hidden = false; this.$interface.hidden = true; this.$fullscreen.hidden = true; }
 			// });
 			this.$back.addEventListener("click", () => {
-				window.location.href = "http://localhost:2105/welcome";
+				window.location.href = "http://10.25.244.14:2105/welcome";
 			});
 
 			this.socket.addEventListener("open", (event) => {

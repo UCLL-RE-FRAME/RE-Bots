@@ -102,7 +102,7 @@ window.customElements.define(
 			});
 
 			this.$back.addEventListener("click", () => {
-				window.location.href = "http://localhost:2105/welcome";
+				window.location.href = "http://10.25.244.14:2105/welcome";
 			});
 			this.socket.addEventListener("open", (event) => {
 				// console.log("opening socket for controller ...")

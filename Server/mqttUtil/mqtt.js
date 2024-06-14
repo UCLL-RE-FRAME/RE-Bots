@@ -35,7 +35,7 @@ const subscribe_topic_bindings = {
 };
 
 const mqttInit = () => {
-	connection = mqtt.connect("mqtt://10.25.255.123", {queueQoSZero: false}); //CHANGEHERE
+	connection = mqtt.connect("mqtt://10.25.238.2", {queueQoSZero: false}); //CHANGEHERE
 	connection.on("connect", () => {
 		console.log(succes_color, `Publisher connected to broker`); // : ${process.env.MQTT_BROKER}`);
 		subscribeToTopics(subscribe_topic_bindings);
