@@ -189,7 +189,7 @@ window.customElements.define(
 			});
 
 			this.$pref.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/ui";
+				window.location.href = "http://localhost:3000/ui";
 			});
 		}
 

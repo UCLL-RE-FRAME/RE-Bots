@@ -1,5 +1,6 @@
 //region IMPORTS
 import "./face.js";
+
 //endregion IMPORTS
 
 //region TEMPLATE
@@ -39,14 +40,17 @@ window.customElements.define(
 		}
 
 		connectedCallback() {
-			this.$mainwel.addEventListener("click", () => {
-				this.requestFullscreen();
-			});
+			this.$mainwel.addEventListener("click", (e) => {
+    		// alleen fullscreen als je op #main (en dus níet op één van je buttons) klikt
+    		if (e.target === this.$mainwel) {
+      		this.requestFullscreen();
+    		}
+ 		});
 			this.$projects.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/beurs";
+				window.location.href = "http://localhost:3000/beurs";
 			});
 			this.$guides.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/james";
+				window.location.href = "http://localhost:3000/james";
 			});
 		}
 	}
