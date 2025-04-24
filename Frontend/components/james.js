@@ -31,7 +31,7 @@ window.customElements.define(
 	class extends HTMLElement {
 		constructor() {
 			super();
-			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot = this.attachShadow({ mode: "open" });
 			this._shadowRoot.appendChild(
 				james_template.content.cloneNode(true)
 			);
@@ -78,7 +78,7 @@ window.customElements.define(
 			//   if (this.$face.hidden) { this.$face.hidden = false; this.$interface.hidden = true; this.$fullscreen.hidden = true; }
 			// });
 			this.$back.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/welcome";
+				window.location.href = "http://localhost:3000/welcome";
 			});
 
 			this.socket.addEventListener("open", (event) => {
@@ -97,7 +97,7 @@ window.customElements.define(
 				} catch (error) {
 					console.warn("PAYLOAD ERROR:");
 					console.dir(error);
-					incoming = {payload: "illegal payload"};
+					incoming = { payload: "illegal payload" };
 				}
 				switch (incoming.payload) {
 					case "face":

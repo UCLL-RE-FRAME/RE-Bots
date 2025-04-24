@@ -51,7 +51,7 @@ window.customElements.define(
 	class extends HTMLElement {
 		constructor() {
 			super();
-			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot = this.attachShadow({ mode: "open" });
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this.$links = this._shadowRoot.querySelectorAll("link-ʤ");
 			this.$beurs = this._shadowRoot.querySelector("beurs-ʤ");
@@ -102,7 +102,7 @@ window.customElements.define(
 			});
 
 			this.$back.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/welcome";
+				window.location.href = "http://localhost:3000/welcome";
 			});
 			this.socket.addEventListener("open", (event) => {
 				// console.log("opening socket for controller ...")
@@ -127,7 +127,7 @@ window.customElements.define(
 		}
 
 		handler(e) {
-			this.socket.send(JSON.stringify({payload: e.target.id}));
+			this.socket.send(JSON.stringify({ payload: e.target.id }));
 		}
 
 		set content(x) {

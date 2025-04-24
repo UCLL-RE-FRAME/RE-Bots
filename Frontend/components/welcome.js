@@ -30,7 +30,7 @@ window.customElements.define(
 	class extends HTMLElement {
 		constructor() {
 			super();
-			this._shadowroot = this.attachShadow({mode: "open"});
+			this._shadowroot = this.attachShadow({ mode: "open" });
 			this._shadowroot.appendChild(template.content.cloneNode(true));
 
 			this.$mainwel = this._shadowroot.getElementById("main");
@@ -42,11 +42,13 @@ window.customElements.define(
 			this.$mainwel.addEventListener("click", () => {
 				this.requestFullscreen();
 			});
+			// Verander dit naar je lokale server:
 			this.$projects.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/beurs";
+				window.location.href = "http://localhost:3000/beurs";  // Gebruik localhost
 			});
+
 			this.$guides.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/james";
+				window.location.href = "http://localhost:3000/james";  // Gebruik localhost
 			});
 		}
 	}
