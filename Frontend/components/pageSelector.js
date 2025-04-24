@@ -38,7 +38,7 @@ window.customElements.define(
 	class extends HTMLElement {
 		constructor() {
 			super();
-			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot = this.attachShadow({ mode: "open" });
 			this._shadowRoot.appendChild(
 				emotion_control_template.content.cloneNode(true)
 			);
@@ -60,7 +60,7 @@ window.customElements.define(
 			//IP Setter --> to review
 			this.$setIpBtn.addEventListener("click", () => {
 				this.socket.send(
-					JSON.stringify({payload: this.$ipInput.value})
+					JSON.stringify({ payload: this.$ipInput.value })
 				);
 				console.log("mqtt://" + this.$ipInput.value);
 			});
@@ -76,7 +76,7 @@ window.customElements.define(
 			});
 
 			this.$control.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/advanced";
+				window.location.href = "http://localhost:3000/advanced";
 			});
 			// this.socket.addEventListener("message", function (event) {
 			// 	console.log("Message from server ", event.data);

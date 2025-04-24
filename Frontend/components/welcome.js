@@ -31,7 +31,7 @@ window.customElements.define(
 	class extends HTMLElement {
 		constructor() {
 			super();
-			this._shadowroot = this.attachShadow({mode: "open"});
+			this._shadowroot = this.attachShadow({ mode: "open" });
 			this._shadowroot.appendChild(template.content.cloneNode(true));
 
 			this.$mainwel = this._shadowroot.getElementById("main");
@@ -40,17 +40,15 @@ window.customElements.define(
 		}
 
 		connectedCallback() {
-			this.$mainwel.addEventListener("click", (e) => {
-    		// alleen fullscreen als je op #main (en dus níet op één van je buttons) klikt
-    		if (e.target === this.$mainwel) {
-      		this.requestFullscreen();
-    		}
- 		});
-			this.$projects.addEventListener("click", () => {
-				window.location.href = "http://localhost:3000/beurs";
+			this.$mainwel.addEventListener("click", () => {
+				this.requestFullscreen();
 			});
+			this.$projects.addEventListener("click", () => {
+				window.location.href = "http://10.25.244.14:2105/beurs";
+			});
+
 			this.$guides.addEventListener("click", () => {
-				window.location.href = "http://localhost:3000/james";
+				window.location.href = "http://10.25.244.14:2105/james";
 			});
 		}
 	}

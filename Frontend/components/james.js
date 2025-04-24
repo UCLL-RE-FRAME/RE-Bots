@@ -31,7 +31,7 @@ window.customElements.define(
 	class extends HTMLElement {
 		constructor() {
 			super();
-			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot = this.attachShadow({ mode: "open" });
 			this._shadowRoot.appendChild(
 				james_template.content.cloneNode(true)
 			);
@@ -97,7 +97,7 @@ window.customElements.define(
 				} catch (error) {
 					console.warn("PAYLOAD ERROR:");
 					console.dir(error);
-					incoming = {payload: "illegal payload"};
+					incoming = { payload: "illegal payload" };
 				}
 				switch (incoming.payload) {
 					case "face":
