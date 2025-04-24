@@ -44,11 +44,11 @@ window.customElements.define(
 				this.requestFullscreen();
 			});
 			this.$projects.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/beurs";
+				window.location.href = "http://localhost:3000/beurs";
 			});
 
 			this.$guides.addEventListener("click", () => {
-				window.location.href = "http://10.25.244.14:2105/james";
+				window.location.href = "http://localhost:3000/james";
 			});
 		}
 	}
