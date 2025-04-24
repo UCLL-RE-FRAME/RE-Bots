@@ -2,13 +2,15 @@
 
 // let fs = require('fs');
 // const X = require('express');
-
+import dotenv from "dotenv";
 import express from "express";
 import path from "path";
+dotenv.config();
+
 
 // const dirname = path.dirname(new URL(import.meta.url).pathname);
 const APP = express();
-
+APP.locals.meta = process.env.VERSION;
 // FRONTS
 APP.use("/james", express.static("./Interfaces/JAMES/"));
 APP.use("/ui", express.static("./Interfaces/UI"));

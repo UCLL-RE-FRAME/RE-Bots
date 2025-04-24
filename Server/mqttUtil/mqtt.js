@@ -1,6 +1,8 @@
+import * as dotenv from "dotenv";
+dotenv.config();
 import * as mqtt from "mqtt";
 import * as format from "./message_formatting.js";
-import {EventEmitter} from "events";
+import { EventEmitter } from "events";
 
 const succes_color = "\x1b[32m%s\x1b[0m"; // green
 const error_color = "\x1b[31m%s\x1b[0m"; // red
@@ -35,7 +37,9 @@ const subscribe_topic_bindings = {
 };
 
 const mqttInit = () => {
-	connection = mqtt.connect("mqtt://10.25.238.2", {queueQoSZero: false}); //CHANGEHERE
+	connection = mqtt.connect(`mqtt://${process.env.MQTT_HOST}:${process.env.MQTT_PORT}`, {
+		queueQoSZero: false
+	});//CHANGEHERE
 	connection.on("connect", () => {
 		console.log(succes_color, `Publisher connected to broker`); // : ${process.env.MQTT_BROKER}`);
 		subscribeToTopics(subscribe_topic_bindings);
@@ -105,4 +109,4 @@ const mqttSendJsonMessage = (source, data) => {
 	}
 };
 
-export {mqttInit, mqttSendJsonMessage, messageEmitter};
+export { mqttInit, mqttSendJsonMessage, messageEmitter };
