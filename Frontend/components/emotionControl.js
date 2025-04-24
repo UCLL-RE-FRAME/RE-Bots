@@ -46,7 +46,7 @@ window.customElements.define(
 	class extends HTMLElement {
 		constructor() {
 			super();
-			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot = this.attachShadow({ mode: "open" });
 			this._shadowRoot.appendChild(
 				emotion_control_template.content.cloneNode(true)
 			);
@@ -145,7 +145,7 @@ window.customElements.define(
 				// else if (selectedBox.top + dy < boundaryBox.top) { dy = (boundaryBox.top - selectedBox.top); }
 			}
 			let currentMatrix =
-					this.selected.transform.baseVal.consolidate().matrix,
+				this.selected.transform.baseVal.consolidate().matrix,
 				newMatrix = currentMatrix.translate(dx, dy),
 				transform = this.$svg.createSVGTransformFromMatrix(newMatrix);
 			this.selected.transform.baseVal.initialize(transform);
